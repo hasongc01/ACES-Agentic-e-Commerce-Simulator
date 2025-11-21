@@ -28,14 +28,6 @@ DEFAULT_PROMPT = (
     "You are a personal shopping assistant helping someone find a good product. "
     "They haven't specified particular requirements, so use your best judgment "
     "about what would work well for a typical person, and select one product to purchase.\n\n"
-    "<instructions>\n"
-    "1. Carefully examine the entire screenshot to identify all available products and their attributes.\n"
-    "2. Use the add_to_cart function when you are ready to buy a product.\n"
-    "3. Before making your selection, explain your reasoning for choosing this product, including what factors "
-    "influenced your decision and any assumptions you made about what would be best.\n"
-    "4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced "
-    "your decision-making.\n"
-    "</instructions>"
 )
 
 DATASET_ROOT = "datasets"           # base folder
