@@ -69,7 +69,7 @@ with left_col:
         "mousepad",
         "stapler",
         "toilet_paper",
-        "tooth_paste",
+        "toothpaste",
         "usb_cable",
         "washing_machine",
     ]
@@ -143,7 +143,7 @@ if run_button:
 
             # -------- Run ACES with spinner (Simple runtime, local dataset) --------
             with right_col:
-                with st.spinner("🤖 I am still shopping ..."):
+                with st.spinner("🤖 I am shopping for you..."):
                     # Mirrors:
                     # uv run run.py --runtime-type simple --local-dataset datasets/<category>.csv --include <model> --experiment-count-limit <n>
                     cmd = (
