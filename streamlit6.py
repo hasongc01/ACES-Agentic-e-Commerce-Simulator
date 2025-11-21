@@ -192,11 +192,12 @@ if run_button:
                 with st.spinner("🤖 I am still shopping ... (debug: running uv run)"):
                     cmd = (
                         f"uv run run.py "
-                        f"--runtime-type simple "
+                        f"--runtime-type screenshot "
                         f"{LOCAL_DATA_FLAG} \"{str(data_path)}\" "
                         f"--include {model} "
                         f"--experiment-count-limit {new_count}"
                     )
+
 
                     st.write("DEBUG: Command to run:")
                     st.code(cmd)
