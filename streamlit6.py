@@ -106,7 +106,7 @@ with left_col:
         "mousepad",
         "stapler",
         "toilet_paper",
-        "tooth_paste",
+        "toothpaste",
         "usb_cable",
         "washing_machine",
     ]
