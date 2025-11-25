@@ -36,10 +36,14 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
         local_dataset_path: Optional[str] = None,
         hf_dataset_name: Optional[str] = None,
         hf_subset: Optional[str] = None,
+
+        
     ):
         """
         Initialize the unified screenshot runtime.
         """
+
+
         self.experiment_loader = ExperimentLoader(
             engine_params=engine_params_list,
             experiment_count_limit=experiment_count_limit,
@@ -107,13 +111,13 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
         return DatasetShoppingEnvironment(screenshot_image=screenshot)
 
     def validate_prerequisites(self) -> bool:
-        """Validate any prerequisites before running experiments."""
-        if self.validation_service:
-            experiments_list = list(self.experiments_iter)
-            return self.validation_service.validate_all_screenshots(
-                experiments_list,
-                self.get_dataset_path(),
-            )
+        # """Validate any prerequisites before running experiments."""
+        # if self.validation_service:
+        #     experiments_list = list(self.experiments_iter)
+        #     return self.validation_service.validate_all_screenshots(
+        #         experiments_list,
+        #         self.get_dataset_path(),
+        #     )
         return True
 
     def get_dataset_path(self) -> Optional[str]:

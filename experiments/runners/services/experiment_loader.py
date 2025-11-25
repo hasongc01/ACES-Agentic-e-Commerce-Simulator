@@ -100,7 +100,7 @@ class ExperimentLoader(EncodedExperimentIdMixin):
         local_dataset_path: Optional[str] = None,
         hf_dataset_name: Optional[str] = None,
         hf_subset: Optional[str] = None,
-    ):
+                ):
         if local_dataset_path and hf_dataset_name:
             raise ValueError(
                 'Cannot specify both local_dataset_path and hf_dataset_name'
@@ -116,6 +116,7 @@ class ExperimentLoader(EncodedExperimentIdMixin):
             assert hf_dataset_name is not None  # Narrow type for mypy
             self._source = _HFDatasetSource(hf_dataset_name, subset=hf_subset)
 
+        # put this near the other simple attribute assignments
         self.engine_params = engine_params
         self.experiment_count_limit = experiment_count_limit
         self.experiments = set(
@@ -136,6 +137,7 @@ class ExperimentLoader(EncodedExperimentIdMixin):
 
     def experiments_iter(self) -> Iterable[ExperimentData]:
         return iter(self.experiments)
+
 
     def load_outstanding_experiments(
         self, submitted_experiments: dict[EngineConfigName, list[ExperimentId]]
