@@ -36,6 +36,8 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
         local_dataset_path: Optional[str] = None,
         hf_dataset_name: Optional[str] = None,
         hf_subset: Optional[str] = None,
+        prompt_override: Optional[str] = None,   # ✅ NEW
+
 
         
     ):
@@ -43,6 +45,7 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
         Initialize the unified screenshot runtime.
         """
 
+        self.prompt_override = prompt_override   # ✅ store it
 
         self.experiment_loader = ExperimentLoader(
             engine_params=engine_params_list,
@@ -154,6 +157,22 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
 
         try:
             experiment_df = data.experiment_df.copy()
+            # ✅ Build the actual prompt we’ll send to the agent
+            base_prompt = data.prompt_template
+
+            if self.prompt_override and self.prompt_override.strip():
+                # Append user’s preference to the existing prompt template
+                combined_prompt = (
+                    base_prompt.rstrip()
+                    + "\n\nAdditional user preference:\n"
+                    + self.prompt_override.strip()
+                )
+            else:
+                combined_prompt = base_prompt
+
+            # If we log/store the prompt, use the combined one
+            if "prompt" in experiment_df.columns:
+                experiment_df["prompt"] = combined_prompt
 
             with create_logger(
                 data.query,
@@ -165,7 +184,7 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
                 silent=True,
             ) as logger:
                 shopper = SimulatedShopper(
-                    initial_message=data.prompt_template,
+                    initial_message=combined_prompt,   # 👈 use combined prompt
                     engine_params=engine_params,
                     environment=environment,
                     logger=logger,

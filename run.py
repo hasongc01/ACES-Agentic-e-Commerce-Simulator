@@ -93,6 +93,14 @@ def parse_args():
                         help='Force resubmission of batches, overriding submitted experiments tracking (batch runtime only)')
     parser.add_argument('--experiment-count-limit', type=int, default=None,
                         help='Maximum number of experiments to run (for debugging)')
+    
+    parser.add_argument(
+    "--prompt-override",
+    type=str,
+    default=None,
+    help="Additional natural language instructions to append to the base prompt.",)
+
+
     return parser.parse_args()
 
 
@@ -134,6 +142,8 @@ async def main():
                 local_dataset_path=args.local_dataset,
                 hf_dataset_name=None if args.local_dataset else hf_dataset,
                 hf_subset=args.subset,
+                # ✅ NEW:
+                prompt_override=args.prompt_override,
             )
             await runtime.run()
         case "batch":
@@ -157,7 +167,9 @@ async def main():
                 max_concurrent_models=MAX_CONCURRENT_MODELS,
                 experiment_count_limit=args.experiment_count_limit,
                 experiment_label_filter=EXPERIMENT_LABEL_FILTER,
-                debug_mode=args.debug
+                debug_mode=args.debug,
+                prompt_override=args.prompt_override,  # 👈 NEW
+
             )
             await runtime.run()
 
