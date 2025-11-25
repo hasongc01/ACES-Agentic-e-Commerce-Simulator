@@ -170,9 +170,7 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
             else:
                 combined_prompt = base_prompt
 
-            # If we log/store the prompt, use the combined one
-            if "prompt" in experiment_df.columns:
-                experiment_df["prompt"] = combined_prompt
+            experiment_df["prompt"] = combined_prompt
 
             with create_logger(
                 data.query,
