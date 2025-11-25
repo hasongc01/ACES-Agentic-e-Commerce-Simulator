@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import subprocess
 from pathlib import Path
+import re 
 
 DEFAULT_PROMPT = """You are a personal shopping assistant helping someone find a good product.
 They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
@@ -188,6 +189,31 @@ def run_aces_simple(local_dataset: str, model_config: str, prompt_override: str 
 
     return result
 
+def get_experiment_csv_from_stdout(stdout: str) -> Path | None:
+    """
+    Parse `uv run run.py` output and find the experiment_data.csv
+    for the model that just ran.
+    """
+    # Look for the "Model aggregated data saved to ..." line
+    m = re.search(
+        r"Model aggregated data saved to\s+(.+aggregated_experiment_data\.csv)",
+        stdout,
+    )
+    if not m:
+        return None
+
+    agg_path = Path(m.group(1).strip())
+    # e.g. experiment_logs/fitness_watch/Anthropic_claude-sonnet-4-5-20250929/aggregated_experiment_data.csv
+    model_root = agg_path.parent  # experiment_logs/.../Anthropic_claude-sonnet-4-5-20250929
+
+    # Find the experiment_data.csv inside that model's folder
+    candidates = list(model_root.rglob("experiment_data.csv"))
+    if not candidates:
+        return None
+
+    # If multiple for some reason, pick the newest
+    candidates.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    return candidates[0]
 
 def get_experiment_csv_for_dataset(dataset_name: str) -> Path | None:
     """

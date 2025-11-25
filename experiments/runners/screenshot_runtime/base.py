@@ -143,12 +143,13 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
             )
 
         # Check if experiment already exists
-        if data.experiment_label and data.experiment_number is not None:
-            journey_dir = data.journey_dir(self.run_output_dir, engine_params)
-            experiment_csv_path = journey_dir / "experiment_data.csv"
+        # if data.experiment_label and data.experiment_number is not None:
+        #     journey_dir = data.journey_dir(self.run_output_dir, engine_params)
+        #     experiment_csv_path = journey_dir / "experiment_data.csv"
 
-            if experiment_csv_path.exists():
-                return
+        #     if experiment_csv_path.exists():
+                    # experiment_csv_path.unlink()
+
 
         model_output_dir = data.model_output_dir(self.run_output_dir, engine_params)
 
