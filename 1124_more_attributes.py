@@ -50,7 +50,8 @@ st.markdown(
             font-weight: 600;
             color: #111827;          /* default; can override inline */
             margin: 0.3rem 0 0.2rem 0;
-            max-width: 150px;        /* match image width */
+            max-width: none;        /* match image width */
+            width: 100%;
 
             display: -webkit-box;
             -webkit-line-clamp: 4;   /* number of lines to show */
@@ -128,12 +129,14 @@ MODEL_OPTIONS = [
 # ======================================================
 # HELPER: CONSISTENT IMAGE BOX
 # ======================================================
-def render_product_image(url, variant="grid"):
-    """
-    Renders a product image in a fixed-size square so the layout stays aligned.
-    variant: "grid" (smaller) or "detail" (larger).
-    """
+def render_product_image(url, variant="grid", highlight=False):
     size = 150 if variant == "grid" else 220
+
+    border_style = (
+        "border:3px solid #dc2626; background-color:#fef3c7;"
+        if highlight else
+        "border:1px solid #e5e7eb; background-color:#ffffff;"
+    )
 
     if not isinstance(url, str) or not url.startswith("http"):
         img_src = "https://via.placeholder.com/300"
@@ -141,21 +144,42 @@ def render_product_image(url, variant="grid"):
         img_src = url
 
     st.markdown(
-        f"""
-        <div style="
-            width:{size}px;
-            height:{size}px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            margin-bottom:0.4rem;
-        ">
-            <img src="{img_src}"
-                 style="max-width:100%; max-height:100%; object-fit:contain;"/>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+            f"""
+            <div style="
+                background-color:#f3f4f6;
+                border-radius:12px;
+                padding:8px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                height:180px;
+                {border_style}
+                margin-bottom:0.5rem;
+            ">
+                <img src="{img_src}"
+                     style="max-width:100%; max-height:100%; object-fit:contain;" />
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    # st.markdown(
+    #     f"""
+    #     <div style="
+    #         width:{size}px;
+    #         height:{size}px;
+    #         {border_style}
+    #         border-radius:16px;
+    #         display:flex;
+    #         align-items:center;
+    #         justify-content:center;
+    #         margin-bottom:0.4rem;
+    #     ">
+    #         <img src="{img_src}"
+    #              style="max-width:100%; max-height:100%; object-fit:contain;"/>
+    #     </div>
+    #     """,
+    #     unsafe_allow_html=True,
+    # )
 
 # ======================================================
 # HELPERS: RUN ACES + LOAD LATEST experiment_data.csv
@@ -177,8 +201,8 @@ def run_aces_simple(local_dataset: str, model_config: str, prompt_override: str 
         str(local_dataset),         # 👈 absolute path to dataset
         "--include",
         model_config,
-        "--experiment-count-limit",
-        "1",
+        # "--experiment-count-limit",
+        # "1",
     ]
 
     # ✅ NEW: only add flag if user provided a prompt
@@ -239,28 +263,6 @@ def get_experiment_csv_for_dataset(dataset_name: str) -> Path | None:
 
     return candidates[0]
 
-def rating_to_stars(rating: float) -> str:
-    """Return a 5-star string like ★★★★☆ based on the numeric rating."""
-    if rating is None or pd.isna(rating):
-        return "☆☆☆☆☆"
-    try:
-        r = float(rating)
-    except (TypeError, ValueError):
-        return "☆☆☆☆☆"
-
-    if r >= 4.5:
-        filled = 5
-    elif r >= 3.5:
-        filled = 4
-    elif r >= 2.5:
-        filled = 3
-    elif r > 0:
-        filled = 2
-    else:
-        filled = 0
-
-    total = 5
-    return "★" * filled + "☆" * (total - filled)
 
 # ======================================================
 # SIDEBAR CONTROLS
@@ -292,11 +294,11 @@ with st.sidebar.expander("Filters", expanded=True):
 
 run_button = st.sidebar.button("🚀 Run Simulator", type="primary")
 
-# For detail view
-if "view" not in st.session_state:
-    st.session_state["view"] = "grid"
-if "detail_sku" not in st.session_state:
-    st.session_state["detail_sku"] = None
+# # For detail view
+# if "view" not in st.session_state:
+#     st.session_state["view"] = "grid"
+# if "detail_sku" not in st.session_state:
+#     st.session_state["detail_sku"] = None
 
 # ======================================================
 # RUN BACKEND + LOAD DF
@@ -398,49 +400,35 @@ if agent_selected_sku is None:
         agent_selected_sku = active_df.iloc[0]["sku"]
 
 # ======================================================
-# DETAIL VIEW
-# ======================================================
-if st.session_state["view"] == "detail" and st.session_state["detail_sku"] is not None:
-    sku = st.session_state["detail_sku"]
-    if sku not in sku_to_row:
-        st.error("Selected product not found in this experiment.")
-    else:
-        row = sku_to_row[sku]
-
-        st.markdown("### Product details")
-
-        if st.button("⬅ Back to products"):
-            st.session_state["view"] = "grid"
-            st.session_state["detail_sku"] = None
-            st.rerun()
-
-        st.markdown("---")
-
-        render_product_image(row.get("image_url"), variant="detail")
-
-        st.markdown(f"#### {row['title']}")
-        price = row.get("price", None)
-        rating = row.get("rating", None)
-        rating_count = row.get("rating_count", None)
-
-        parts = []
-        if price is not None and pd.notna(price):
-            parts.append(f"**Price:** ${float(price):.2f}")
-        if rating is not None and pd.notna(rating):
-            parts.append(f"**Rating:** ⭐ {float(rating):.1f}")
-        if rating_count is not None and pd.notna(rating_count):
-            parts.append(f"**Reviews:** {int(rating_count)}")
-
-        if parts:
-            st.markdown("  \n".join(parts))
-
-    st.stop()  # don't render grid below when in detail view
-
-# ======================================================
 # GRID VIEW WITH AGENT HIGHLIGHT
 # ======================================================
 num_cols = 4
 cols = st.columns(num_cols)
+
+def rating_to_stars(rating: float) -> str:
+    """Return a 5-star string like ★★★★☆ based on the numeric rating."""
+    if rating is None:
+        return "☆☆☆☆☆"
+    try:
+        r = float(rating)
+    except (TypeError, ValueError):
+        return "☆☆☆☆☆"
+
+    # Buckets: 2.5–3.4 → 3 stars, 3.5–4.4 → 4, 4.5–5 → 5
+    if r >= 4.5:
+        filled = 5
+    elif r >= 3.5:
+        filled = 4
+    elif r >= 2.5:
+        filled = 3
+    elif r > 0:
+        filled = 2
+    else:
+        filled = 0
+
+    total = 5
+    return "★" * filled + "☆" * (total - filled)
+
 
 for i, sku in enumerate(sku_order_current):
     if sku not in sku_to_row:
@@ -450,21 +438,28 @@ for i, sku in enumerate(sku_order_current):
     is_agent_pick = (agent_selected_sku is not None and sku == agent_selected_sku)
 
     with cols[i % num_cols]:
-        card_style = (
-            "border: 2px solid #dc2626; background-color: #fee2e2; "
-            "border-radius: 10px; padding: 6px; margin-bottom: 8px; position:relative;"
+        # Outer card: this is what gets the big red border for the selected product
+        outer_style = (
+            "border: 3px solid #dc2626; background-color:#fef3c7; "
+            "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
             if is_agent_pick
             else
-            "border: 1px solid #e5e7eb; background-color: #ffffff; "
-            "border-radius: 10px; padding: 6px; margin-bottom: 8px; position:relative;"
+            "border: 1px solid #e5e7eb; background-color:#ffffff; "
+            "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
         )
-        st.markdown(f'<div style="{card_style}">', unsafe_allow_html=True)
+        # st.markdown(f'<div style="{outer_style}">', unsafe_allow_html=True)
 
-        # --- Image ---
-        render_product_image(row.get("image_url"), variant="grid")
+        # --- IMAGE AREA (just the image, no extra empty grey box) ---
+        render_product_image(row.get("image_url"), variant="grid", highlight=is_agent_pick)
 
-        # --- Title (up to 4 lines, CSS handles clamp + ellipsis) ---
-        full_title = str(row.get("title", ""))
+        # --- WHITE CONTENT AREA UNDER IMAGE ---
+        st.markdown(
+            '<div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">',
+            unsafe_allow_html=True,
+        )
+
+        # Title (up to 4 lines, ellipsis handled by CSS class)
+        full_title = str(row["title"])
         title_color = "#dc2626" if is_agent_pick else "#111827"
         st.markdown(
             f"""
@@ -475,7 +470,7 @@ for i, sku in enumerate(sku_order_current):
             unsafe_allow_html=True,
         )
 
-        # --- Stars + (# reviews) row ---
+        # Stars + (# reviews)
         rating = row.get("rating", None)
         rating_count = row.get("rating_count", None)
         if rating is not None and pd.notna(rating):
@@ -487,13 +482,8 @@ for i, sku in enumerate(sku_order_current):
                 f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>',
                 unsafe_allow_html=True,
             )
-        else:
-            st.markdown(
-                '<p class="product-meta">☆☆☆☆☆</p>',
-                unsafe_allow_html=True,
-            )
 
-        # --- Price row ---
+        # Price row
         price = row.get("price", None)
         if price is not None and pd.notna(price):
             st.markdown(
@@ -501,35 +491,55 @@ for i, sku in enumerate(sku_order_current):
                 unsafe_allow_html=True,
             )
 
-        # --- Bottom row: Add to Cart (left) + low-stock pill (right) ---
+        # --- Bottom row: Add to Cart (left) + pill (right) ---
         low_stock = bool(row.get("low_stock", False))
         stock_quantity = row.get("stock_quantity", None)
+        overall_pick = bool(row.get("overall_pick", False))
+        sponsored = bool(row.get("sponsored", False))
         url = str(row.get("url", ""))
 
-        low_stock_html = ""
+        # Decide which pill to show (priority: low_stock > overall_pick > sponsored)
+        pill_html = ""
         if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
-            low_stock_html = (
-                f'<span style="background-color:#f97316; color:white; '
-                f'font-size:0.7rem; padding:2px 6px; border-radius:999px; '
-                f'white-space:nowrap;">Only {int(stock_quantity)} left</span>'
+            pill_html = (
+                '<span style="background-color:#f97316; color:white; '
+                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+                'white-space:nowrap;">Only '
+                f'{int(stock_quantity)} left</span>'
+            )
+        elif overall_pick:
+            pill_html = (
+                '<span style="background-color:#1d4ed8; color:white; '
+                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+                'white-space:nowrap;">Overall pick</span>'
+            )
+        elif sponsored:
+            pill_html = (
+                '<span style="background-color:#6b7280; color:white; '
+                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+                'white-space:nowrap;">Sponsored</span>'
             )
 
-        add_to_cart_html = f"""
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.4rem;">
-            <a href="{url}" target="_blank" style="
-                text-decoration:none;
-                background-color:#f59e0b;
-                color:#111827;
-                padding:4px 10px;
-                border-radius:999px;
-                font-size:0.8rem;
-                font-weight:600;
-            ">
-                Add to Cart
-            </a>
-            {low_stock_html}
-        </div>
-        """
-        st.markdown(add_to_cart_html, unsafe_allow_html=True)
+        st.markdown(
+            f"""
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                <a href="{url}" target="_blank" style="
+                    text-decoration:none;
+                    background-color:#f59e0b;
+                    color:#111827;
+                    padding:6px 14px;
+                    border-radius:999px;
+                    font-size:0.8rem;
+                    font-weight:600;
+                ">
+                    Add to Cart
+                </a>
+                {pill_html}
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-        st.markdown("</div>", unsafe_allow_html=True)
+        # Close white body + outer card
+        st.markdown("</div>", unsafe_allow_html=True)  # white body
+        # st.markdown("</div>", unsafe_allow_html=True)  # outer card
