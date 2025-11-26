@@ -2,6 +2,6 @@ engine_type: anthropic
 model: claude-sonnet-4-5-20250929
 temperature: 1.0
 thinking:
-  type: enabled
+  type: disabled
   # disabled  # change to "enabled" and set a budget_tokens value to enable thinking
-  budget_tokens: 3000
+  # budget_tokens: 
