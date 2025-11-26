@@ -161,7 +161,7 @@ def get_latest_experiment_csv(dataset_name: str) -> Path | None:
 
     # Your real structure:
     # experiment_logs/<dataset>/<engine_run_id>/<dataset>/master_experiment_0/experiment_data.csv
-    candidates = list(root.rglob("master_experiment_0/experiment_data.csv"))
+    candidates = list(root.rglob("master_experiment_*/experiment_data.csv"))
     if not candidates:
         return None
 
