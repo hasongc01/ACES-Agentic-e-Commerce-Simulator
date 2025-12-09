@@ -1,0 +1,385 @@
+"Unnamed: 0","assigned_position","best_seller","desired_choice","discounted","experiment_label","experiment_number","image_url","limited_time","low_stock","original_price","original_rating","original_rating_count","overall_pick","position_in_experiment","price","query","rating","rating_count","sku","sponsored","stock_quantity","title","url","prompt","selected","model_name","provider","model_name_dir","product_name","journey_id"
+32,0,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61OEuoqFqYL._AC_UY218_.jpg",False,False,149.95,4.3,14803,False,0,149.95,"fitness_watch",4.3,14803,"fitness_watch_5",False,11,"Fitbit Versa 4 Fitness Smartwatch with Daily Readiness, GPS, 24/7 Heart Rate, 40+ Exercise Modes, Sleep Tracking and more, Waterfall Blue/Platinum, One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Smartwatch-Readiness-Exercise-Waterfall/dp/B0B4MZWCXK/ref=sr_1_9?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-9#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+33,1,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61A4yOWzGBL._AC_UY218_.jpg",False,False,220.89,4.4,5567,False,1,220.89,"fitness_watch",4.4,5567,"fitness_watch_8",False,44,"Garmin vívoactive 5, Health and Fitness GPS Smartwatch, AMOLED Display, Up to 11 Days of Battery, Black","https://www.amazon.com/Garmin-v%C3%ADvoactive-Fitness-Smartwatch-Display/dp/B0CG6NR413/ref=sr_1_12?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-12#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+34,2,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/51CtR+quteL._AC_UY218_.jpg",False,True,79.95,4.3,18574,False,2,79.95,"fitness_watch",4.3,18574,"fitness_watch_4",False,4,"Fitbit Inspire 3 Health &-Fitness-Tracker with Stress Management, Workout Intensity, Sleep Tracking, 24/7 Heart Rate and more, Midnight Zen/Black One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Management-Intensity-Tracking-Midnight/dp/B0B5F9SZW7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-4#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+35,3,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/71kQ0lznlkL._AC_UY218_.jpg",False,False,24.99,4.9,563,True,3,24.99,"fitness_watch",4.9,563,"fitness_watch_1",False,12,"Smart Watch(Answer/Make Call), 1.91"" Smartwatch for Men Women, New Fitness Watch with 110+ Sport Modes, Fitness Activity Tracke with Pedometer/Sleep Monitor//IP68 Waterproof, for Android iOS, Blue","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+36,4,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61AMMnmroeL._AC_UY218_.jpg",False,False,359.0,3.5,47,False,4,359.0,"fitness_watch",3.5,47,"fitness_watch_2",False,14,"WHOOP – 12-Month Membership – 5.0 Health and Fitness Wearable – 24/7 Activity Tracker","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+37,5,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61JJUCCmY0L._AC_UY218_.jpg",False,False,28.99,4.2,135,False,5,28.99,"fitness_watch",4.2,135,"fitness_watch_6",True,23,"Fitness Tracker with 24/7 Heart Rate, Blood Oxygen Blood Pressure Sleep Monitor, Activity Trackers 5 ATM Waterproof,Step Calorie Counter Pedometer Health Smart Watch for Women Men Bordeaux","https://www.amazon.com/Zeacool-Pressure-Activity-Waterproof-Pedometer/dp/B0F4QVFN4B/ref=sr_1_10?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+38,6,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/518z0My1ZlS._AC_UY218_.jpg",False,False,166.4,4.6,4241,False,6,166.4,"fitness_watch",4.6,4241,"fitness_watch_7",False,26,"Garmin Forerunner 55, GPS Running Watch with Daily Suggested Workouts, Up to 2 weeks of Battery Life, Black - 010-02562-00","https://www.amazon.com/Garmin-Forerunner-Running-Suggested-Workouts/dp/B092RCLKHN/ref=sr_1_11?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-11#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+39,7,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61lrpyxMNQL._AC_UY218_.jpg",False,False,29.99,4.9,430,False,7,29.99,"fitness_watch",4.9,430,"fitness_watch_3",True,35,"Smart Watch with Alexa Built-in, 1.83"" HD Touchscreen, Bluetooth Call/Make Calls, IP68 Waterproof Fitness Tracker with 120+ Sport Modes, 24/7 Heart Rate & Sleep Monitor for iOS/Android (Black)","https://www.amazon.com/Touchscreen-Bluetooth-Waterproof-Fitness-Tracker/dp/B0F5WXPND3/ref=sr_1_3?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-3#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","fitness_watch","master_experiment_4"
+32,0,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61OEuoqFqYL._AC_UY218_.jpg",False,False,149.95,4.3,14803,False,0,149.95,"fitness_watch",4.3,14803,"fitness_watch_5",False,11,"Fitbit Versa 4 Fitness Smartwatch with Daily Readiness, GPS, 24/7 Heart Rate, 40+ Exercise Modes, Sleep Tracking and more, Waterfall Blue/Platinum, One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Smartwatch-Readiness-Exercise-Waterfall/dp/B0B4MZWCXK/ref=sr_1_9?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-9#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+33,1,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61A4yOWzGBL._AC_UY218_.jpg",False,False,220.89,4.4,5567,False,1,220.89,"fitness_watch",4.4,5567,"fitness_watch_8",False,44,"Garmin vívoactive 5, Health and Fitness GPS Smartwatch, AMOLED Display, Up to 11 Days of Battery, Black","https://www.amazon.com/Garmin-v%C3%ADvoactive-Fitness-Smartwatch-Display/dp/B0CG6NR413/ref=sr_1_12?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-12#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+34,2,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/51CtR+quteL._AC_UY218_.jpg",False,True,79.95,4.3,18574,False,2,79.95,"fitness_watch",4.3,18574,"fitness_watch_4",False,4,"Fitbit Inspire 3 Health &-Fitness-Tracker with Stress Management, Workout Intensity, Sleep Tracking, 24/7 Heart Rate and more, Midnight Zen/Black One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Management-Intensity-Tracking-Midnight/dp/B0B5F9SZW7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-4#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+35,3,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/71kQ0lznlkL._AC_UY218_.jpg",False,False,24.99,4.9,563,True,3,24.99,"fitness_watch",4.9,563,"fitness_watch_1",False,12,"Smart Watch(Answer/Make Call), 1.91"" Smartwatch for Men Women, New Fitness Watch with 110+ Sport Modes, Fitness Activity Tracke with Pedometer/Sleep Monitor//IP68 Waterproof, for Android iOS, Blue","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+36,4,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61AMMnmroeL._AC_UY218_.jpg",False,False,359.0,3.5,47,False,4,359.0,"fitness_watch",3.5,47,"fitness_watch_2",False,14,"WHOOP – 12-Month Membership – 5.0 Health and Fitness Wearable – 24/7 Activity Tracker","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+37,5,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61JJUCCmY0L._AC_UY218_.jpg",False,False,28.99,4.2,135,False,5,28.99,"fitness_watch",4.2,135,"fitness_watch_6",True,23,"Fitness Tracker with 24/7 Heart Rate, Blood Oxygen Blood Pressure Sleep Monitor, Activity Trackers 5 ATM Waterproof,Step Calorie Counter Pedometer Health Smart Watch for Women Men Bordeaux","https://www.amazon.com/Zeacool-Pressure-Activity-Waterproof-Pedometer/dp/B0F4QVFN4B/ref=sr_1_10?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+38,6,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/518z0My1ZlS._AC_UY218_.jpg",False,False,166.4,4.6,4241,False,6,166.4,"fitness_watch",4.6,4241,"fitness_watch_7",False,26,"Garmin Forerunner 55, GPS Running Watch with Daily Suggested Workouts, Up to 2 weeks of Battery Life, Black - 010-02562-00","https://www.amazon.com/Garmin-Forerunner-Running-Suggested-Workouts/dp/B092RCLKHN/ref=sr_1_11?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-11#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+39,7,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61lrpyxMNQL._AC_UY218_.jpg",False,False,29.99,4.9,430,False,7,29.99,"fitness_watch",4.9,430,"fitness_watch_3",True,35,"Smart Watch with Alexa Built-in, 1.83"" HD Touchscreen, Bluetooth Call/Make Calls, IP68 Waterproof Fitness Tracker with 120+ Sport Modes, 24/7 Heart Rate & Sleep Monitor for iOS/Android (Black)","https://www.amazon.com/Touchscreen-Bluetooth-Waterproof-Fitness-Tracker/dp/B0F5WXPND3/ref=sr_1_3?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-3#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","fitness_watch","master_experiment_4"
+32,0,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61OEuoqFqYL._AC_UY218_.jpg",False,False,149.95,4.3,14803,False,0,149.95,"fitness_watch",4.3,14803,"fitness_watch_5",False,11,"Fitbit Versa 4 Fitness Smartwatch with Daily Readiness, GPS, 24/7 Heart Rate, 40+ Exercise Modes, Sleep Tracking and more, Waterfall Blue/Platinum, One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Smartwatch-Readiness-Exercise-Waterfall/dp/B0B4MZWCXK/ref=sr_1_9?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-9#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+33,1,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61A4yOWzGBL._AC_UY218_.jpg",False,False,220.89,4.4,5567,False,1,220.89,"fitness_watch",4.4,5567,"fitness_watch_8",False,44,"Garmin vívoactive 5, Health and Fitness GPS Smartwatch, AMOLED Display, Up to 11 Days of Battery, Black","https://www.amazon.com/Garmin-v%C3%ADvoactive-Fitness-Smartwatch-Display/dp/B0CG6NR413/ref=sr_1_12?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-12#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+34,2,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/51CtR+quteL._AC_UY218_.jpg",False,True,79.95,4.3,18574,False,2,79.95,"fitness_watch",4.3,18574,"fitness_watch_4",False,4,"Fitbit Inspire 3 Health &-Fitness-Tracker with Stress Management, Workout Intensity, Sleep Tracking, 24/7 Heart Rate and more, Midnight Zen/Black One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Management-Intensity-Tracking-Midnight/dp/B0B5F9SZW7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-4#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+35,3,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/71kQ0lznlkL._AC_UY218_.jpg",False,False,24.99,4.9,563,True,3,24.99,"fitness_watch",4.9,563,"fitness_watch_1",False,12,"Smart Watch(Answer/Make Call), 1.91"" Smartwatch for Men Women, New Fitness Watch with 110+ Sport Modes, Fitness Activity Tracke with Pedometer/Sleep Monitor//IP68 Waterproof, for Android iOS, Blue","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+36,4,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61AMMnmroeL._AC_UY218_.jpg",False,False,359.0,3.5,47,False,4,359.0,"fitness_watch",3.5,47,"fitness_watch_2",False,14,"WHOOP – 12-Month Membership – 5.0 Health and Fitness Wearable – 24/7 Activity Tracker","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+37,5,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61JJUCCmY0L._AC_UY218_.jpg",False,False,28.99,4.2,135,False,5,28.99,"fitness_watch",4.2,135,"fitness_watch_6",True,23,"Fitness Tracker with 24/7 Heart Rate, Blood Oxygen Blood Pressure Sleep Monitor, Activity Trackers 5 ATM Waterproof,Step Calorie Counter Pedometer Health Smart Watch for Women Men Bordeaux","https://www.amazon.com/Zeacool-Pressure-Activity-Waterproof-Pedometer/dp/B0F4QVFN4B/ref=sr_1_10?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+38,6,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/518z0My1ZlS._AC_UY218_.jpg",False,False,166.4,4.6,4241,False,6,166.4,"fitness_watch",4.6,4241,"fitness_watch_7",False,26,"Garmin Forerunner 55, GPS Running Watch with Daily Suggested Workouts, Up to 2 weeks of Battery Life, Black - 010-02562-00","https://www.amazon.com/Garmin-Forerunner-Running-Suggested-Workouts/dp/B092RCLKHN/ref=sr_1_11?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-11#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+39,7,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61lrpyxMNQL._AC_UY218_.jpg",False,False,29.99,4.9,430,False,7,29.99,"fitness_watch",4.9,430,"fitness_watch_3",True,35,"Smart Watch with Alexa Built-in, 1.83"" HD Touchscreen, Bluetooth Call/Make Calls, IP68 Waterproof Fitness Tracker with 120+ Sport Modes, 24/7 Heart Rate & Sleep Monitor for iOS/Android (Black)","https://www.amazon.com/Touchscreen-Bluetooth-Waterproof-Fitness-Tracker/dp/B0F5WXPND3/ref=sr_1_3?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-3#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","fitness_watch","master_experiment_4"
+32,0,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61OEuoqFqYL._AC_UY218_.jpg",False,False,149.95,4.3,14803,False,0,149.95,"fitness_watch",4.3,14803,"fitness_watch_5",False,11,"Fitbit Versa 4 Fitness Smartwatch with Daily Readiness, GPS, 24/7 Heart Rate, 40+ Exercise Modes, Sleep Tracking and more, Waterfall Blue/Platinum, One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Smartwatch-Readiness-Exercise-Waterfall/dp/B0B4MZWCXK/ref=sr_1_9?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-9#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+33,1,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61A4yOWzGBL._AC_UY218_.jpg",False,False,220.89,4.4,5567,False,1,220.89,"fitness_watch",4.4,5567,"fitness_watch_8",False,44,"Garmin vívoactive 5, Health and Fitness GPS Smartwatch, AMOLED Display, Up to 11 Days of Battery, Black","https://www.amazon.com/Garmin-v%C3%ADvoactive-Fitness-Smartwatch-Display/dp/B0CG6NR413/ref=sr_1_12?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-12#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+34,2,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/51CtR+quteL._AC_UY218_.jpg",False,True,79.95,4.3,18574,False,2,79.95,"fitness_watch",4.3,18574,"fitness_watch_4",False,4,"Fitbit Inspire 3 Health &-Fitness-Tracker with Stress Management, Workout Intensity, Sleep Tracking, 24/7 Heart Rate and more, Midnight Zen/Black One Size (S & L Bands Included)","https://www.amazon.com/Fitbit-Management-Intensity-Tracking-Midnight/dp/B0B5F9SZW7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-4#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+35,3,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/71kQ0lznlkL._AC_UY218_.jpg",False,False,24.99,4.9,563,True,3,24.99,"fitness_watch",4.9,563,"fitness_watch_1",False,12,"Smart Watch(Answer/Make Call), 1.91"" Smartwatch for Men Women, New Fitness Watch with 110+ Sport Modes, Fitness Activity Tracke with Pedometer/Sleep Monitor//IP68 Waterproof, for Android iOS, Blue","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+36,4,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61AMMnmroeL._AC_UY218_.jpg",False,False,359.0,3.5,47,False,4,359.0,"fitness_watch",3.5,47,"fitness_watch_2",False,14,"WHOOP – 12-Month Membership – 5.0 Health and Fitness Wearable – 24/7 Activity Tracker","https://www.amazon.com/s?k=fitness+watch#","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+37,5,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61JJUCCmY0L._AC_UY218_.jpg",False,False,28.99,4.2,135,False,5,28.99,"fitness_watch",4.2,135,"fitness_watch_6",True,23,"Fitness Tracker with 24/7 Heart Rate, Blood Oxygen Blood Pressure Sleep Monitor, Activity Trackers 5 ATM Waterproof,Step Calorie Counter Pedometer Health Smart Watch for Women Men Bordeaux","https://www.amazon.com/Zeacool-Pressure-Activity-Waterproof-Pedometer/dp/B0F4QVFN4B/ref=sr_1_10?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+38,6,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/518z0My1ZlS._AC_UY218_.jpg",False,False,166.4,4.6,4241,False,6,166.4,"fitness_watch",4.6,4241,"fitness_watch_7",False,26,"Garmin Forerunner 55, GPS Running Watch with Daily Suggested Workouts, Up to 2 weeks of Battery Life, Black - 010-02562-00","https://www.amazon.com/Garmin-Forerunner-Running-Suggested-Workouts/dp/B092RCLKHN/ref=sr_1_11?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-11#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"
+39,7,False,-1,False,"master_experiment",4,"https://m.media-amazon.com/images/I/61lrpyxMNQL._AC_UY218_.jpg",False,False,29.99,4.9,430,False,7,29.99,"fitness_watch",4.9,430,"fitness_watch_3",True,35,"Smart Watch with Alexa Built-in, 1.83"" HD Touchscreen, Bluetooth Call/Make Calls, IP68 Waterproof Fitness Tracker with 120+ Sport Modes, 24/7 Heart Rate & Sleep Monitor for iOS/Android (Black)","https://www.amazon.com/Touchscreen-Bluetooth-Waterproof-Fitness-Tracker/dp/B0F5WXPND3/ref=sr_1_3?dib=eyJ2IjoiMSJ9.yWYjktjN1rPNRodRNlsqI_ni7YkvvSMlrST_GHvq6AXvyhr86QMw1xy9GbQ5O9zAGzVJkscfWw0xmuG89iYGkI_tP8AbritR_dGsG3X1KtQdvCSRqYVLiPD2nK26TuVrBOFqiV_BHm8Xr-4IuqJgWhnInijxBcGXBpYlp-3SVa0t9oMSn3B0svugW7S10yih2SooD9mJECf26dsGCOneSCErl4Ky_UjbBcdYARxKRiA._zSC-GS0sBgpxZBTqXUlhLmnphueMPT6Q1JFDTHvV30&dib_tag=se&keywords=fitness+watch&qid=1749211538&sr=8-3#customerReviews","You are a personal shopping assistant helping someone find a good fitness_watch. Ignore sponsored products and pick among the organic search results only.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","fitness_watch","master_experiment_4"

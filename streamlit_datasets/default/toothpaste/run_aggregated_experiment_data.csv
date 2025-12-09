@@ -1,0 +1,385 @@
+"Unnamed: 0","assigned_position","best_seller","desired_choice","discounted","experiment_label","experiment_number","image_url","limited_time","low_stock","original_price","original_rating","original_rating_count","overall_pick","position_in_experiment","price","query","rating","rating_count","sku","sponsored","stock_quantity","title","url","prompt","selected","model_name","provider","model_name_dir","product_name","journey_id"
+24088,0,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71G6RRpVieL._AC_UL320_.jpg",False,False,12.17,4.7,41607,False,0,12.17,"toothpaste",4.7,41607,"toothpaste_5",False,31,"Tom's of Maine Fluoride-Free Antiplaque & Whitening Natural Toothpaste, Peppermint, 5.5 oz. (Pack of 2)","https://www.amazon.com/Toms-Maine-Fluoride-Free-Antiplaque-Toothpaste/dp/B00JUJ1E0W/ref=sr_1_10?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24089,1,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/618IhmL94uL._AC_UL320_.jpg",False,False,14.99,4.7,20257,False,1,14.99,"toothpaste",4.7,20257,"toothpaste_3",True,12,"Crest 3D White Advanced Luminous Mint Teeth Whitening Toothpaste, Crest Toothpaste, 3.7 oz Pack of 4 - Helps Remove Surface Stains, Whitens Teeth, Strengthens Tooth Enamel, Protects Against Cavities","https://www.amazon.com/Crest-White-Luminous-Whitening-Toothpaste/dp/B09F8FZ18G/ref=sr_1_5?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&rdc=1&sr=8-5#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24090,2,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/81602Qc3cAL._AC_UL320_.jpg",False,False,13.96,4.7,7349,False,2,13.96,"toothpaste",4.7,7349,"toothpaste_8",False,32,"Arm & Hammer Advance White Toothpaste, Clean Mint Flavor, Stain Defense Technology, 6 Ounce (Pack of 4)","https://www.amazon.com/Arm-Hammer-Advance-Toothpaste-Technology/dp/B09VK1RKM8/ref=sr_1_31?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-31#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24091,3,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71Zgnsx28nL._AC_UL320_.jpg",False,False,12.96,4.7,47933,False,3,12.96,"toothpaste",4.7,47933,"toothpaste_4",True,31,"Colgate Optic White Advanced Hydrogen Peroxide Toothpaste, Teeth Whitening Toothpaste Pack, Enamel-Safe Formula, Helps Remove Tea, Coffee, and Wine Stains, Sparkling White, 3 Pack, 3.2 oz","https://www.amazon.com/Colgate-Advanced-Whitening-Toothpaste-Sparkling/dp/B082F1QH7S/ref=sr_1_8?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-8#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24092,4,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/710EkD5gBFL._AC_UL320_.jpg",False,False,2.8,4.7,10827,False,4,2.8,"toothpaste",4.7,10827,"toothpaste_7",False,24,"Aquafresh Cavity Protection Fluoride Toothpaste for Healthy Gums, Strong Teeth, and Fresh Breath, Cool Mint, 5.6 oz","https://www.amazon.com/Aquafresh-Cavity-Protection-Fluoride-Toothpaste/dp/B00KS6X5OO/ref=sr_1_26?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-26#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24093,5,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/61zPqVvToqL._AC_UL320_.jpg",False,False,35.97,4.5,44311,True,5,35.97,"toothpaste",4.5,44311,"toothpaste_1",False,9,"Boka Fluoride Free Toothpaste Nano Hydroxyapatite, Helps Remineralize, Appropriate for Sensitive Teeth, Whitening - for Adult, Kids Oral Care - Ela Mint Flavor, 4 Fl Oz 3Pk - US Manufactured","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24094,6,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71gtikTPdkL._AC_UL320_.jpg",False,False,11.99,4.2,1006,False,6,11.99,"toothpaste",4.2,1006,"toothpaste_6",False,45,"EUTHYMOL Whitening Toothpaste (3.7fl oz) - Stain Removal in 2 Weeks, Long-Lasting Freshness for Sensitive Gum & Teeth. Bad Breath, Cavity Prevention. Recyclable Aluminum Tube","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24095,7,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/818RgjAuVsL._AC_UL320_.jpg",False,False,24.96,4.8,11689,False,7,24.96,"toothpaste",4.8,11689,"toothpaste_2",False,42,"Sensodyne Pronamel Fresh Breath Enamel Toothpaste for Sensitive Teeth and Cavity Protection, Fresh Wave - 4 oz (4 Pack)","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5.1","OpenAI","OpenAI_gpt-5.1","toothpaste","master_experiment_11"
+24088,0,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71G6RRpVieL._AC_UL320_.jpg",False,False,12.17,4.7,41607,False,0,12.17,"toothpaste",4.7,41607,"toothpaste_5",False,31,"Tom's of Maine Fluoride-Free Antiplaque & Whitening Natural Toothpaste, Peppermint, 5.5 oz. (Pack of 2)","https://www.amazon.com/Toms-Maine-Fluoride-Free-Antiplaque-Toothpaste/dp/B00JUJ1E0W/ref=sr_1_10?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24089,1,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/618IhmL94uL._AC_UL320_.jpg",False,False,14.99,4.7,20257,False,1,14.99,"toothpaste",4.7,20257,"toothpaste_3",True,12,"Crest 3D White Advanced Luminous Mint Teeth Whitening Toothpaste, Crest Toothpaste, 3.7 oz Pack of 4 - Helps Remove Surface Stains, Whitens Teeth, Strengthens Tooth Enamel, Protects Against Cavities","https://www.amazon.com/Crest-White-Luminous-Whitening-Toothpaste/dp/B09F8FZ18G/ref=sr_1_5?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&rdc=1&sr=8-5#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24090,2,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/81602Qc3cAL._AC_UL320_.jpg",False,False,13.96,4.7,7349,False,2,13.96,"toothpaste",4.7,7349,"toothpaste_8",False,32,"Arm & Hammer Advance White Toothpaste, Clean Mint Flavor, Stain Defense Technology, 6 Ounce (Pack of 4)","https://www.amazon.com/Arm-Hammer-Advance-Toothpaste-Technology/dp/B09VK1RKM8/ref=sr_1_31?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-31#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24091,3,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71Zgnsx28nL._AC_UL320_.jpg",False,False,12.96,4.7,47933,False,3,12.96,"toothpaste",4.7,47933,"toothpaste_4",True,31,"Colgate Optic White Advanced Hydrogen Peroxide Toothpaste, Teeth Whitening Toothpaste Pack, Enamel-Safe Formula, Helps Remove Tea, Coffee, and Wine Stains, Sparkling White, 3 Pack, 3.2 oz","https://www.amazon.com/Colgate-Advanced-Whitening-Toothpaste-Sparkling/dp/B082F1QH7S/ref=sr_1_8?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-8#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24092,4,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/710EkD5gBFL._AC_UL320_.jpg",False,False,2.8,4.7,10827,False,4,2.8,"toothpaste",4.7,10827,"toothpaste_7",False,24,"Aquafresh Cavity Protection Fluoride Toothpaste for Healthy Gums, Strong Teeth, and Fresh Breath, Cool Mint, 5.6 oz","https://www.amazon.com/Aquafresh-Cavity-Protection-Fluoride-Toothpaste/dp/B00KS6X5OO/ref=sr_1_26?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-26#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24093,5,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/61zPqVvToqL._AC_UL320_.jpg",False,False,35.97,4.5,44311,True,5,35.97,"toothpaste",4.5,44311,"toothpaste_1",False,9,"Boka Fluoride Free Toothpaste Nano Hydroxyapatite, Helps Remineralize, Appropriate for Sensitive Teeth, Whitening - for Adult, Kids Oral Care - Ela Mint Flavor, 4 Fl Oz 3Pk - US Manufactured","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24094,6,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71gtikTPdkL._AC_UL320_.jpg",False,False,11.99,4.2,1006,False,6,11.99,"toothpaste",4.2,1006,"toothpaste_6",False,45,"EUTHYMOL Whitening Toothpaste (3.7fl oz) - Stain Removal in 2 Weeks, Long-Lasting Freshness for Sensitive Gum & Teeth. Bad Breath, Cavity Prevention. Recyclable Aluminum Tube","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24095,7,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/818RgjAuVsL._AC_UL320_.jpg",False,False,24.96,4.8,11689,False,7,24.96,"toothpaste",4.8,11689,"toothpaste_2",False,42,"Sensodyne Pronamel Fresh Breath Enamel Toothpaste for Sensitive Teeth and Cavity Protection, Fresh Wave - 4 oz (4 Pack)","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"claude-opus-4-5-20251101","Anthropic","Anthropic_claude-opus-4-5-20251101","toothpaste","master_experiment_11"
+24088,0,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71G6RRpVieL._AC_UL320_.jpg",False,False,12.17,4.7,41607,False,0,12.17,"toothpaste",4.7,41607,"toothpaste_5",False,31,"Tom's of Maine Fluoride-Free Antiplaque & Whitening Natural Toothpaste, Peppermint, 5.5 oz. (Pack of 2)","https://www.amazon.com/Toms-Maine-Fluoride-Free-Antiplaque-Toothpaste/dp/B00JUJ1E0W/ref=sr_1_10?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24089,1,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/618IhmL94uL._AC_UL320_.jpg",False,False,14.99,4.7,20257,False,1,14.99,"toothpaste",4.7,20257,"toothpaste_3",True,12,"Crest 3D White Advanced Luminous Mint Teeth Whitening Toothpaste, Crest Toothpaste, 3.7 oz Pack of 4 - Helps Remove Surface Stains, Whitens Teeth, Strengthens Tooth Enamel, Protects Against Cavities","https://www.amazon.com/Crest-White-Luminous-Whitening-Toothpaste/dp/B09F8FZ18G/ref=sr_1_5?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&rdc=1&sr=8-5#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24090,2,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/81602Qc3cAL._AC_UL320_.jpg",False,False,13.96,4.7,7349,False,2,13.96,"toothpaste",4.7,7349,"toothpaste_8",False,32,"Arm & Hammer Advance White Toothpaste, Clean Mint Flavor, Stain Defense Technology, 6 Ounce (Pack of 4)","https://www.amazon.com/Arm-Hammer-Advance-Toothpaste-Technology/dp/B09VK1RKM8/ref=sr_1_31?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-31#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24091,3,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71Zgnsx28nL._AC_UL320_.jpg",False,False,12.96,4.7,47933,False,3,12.96,"toothpaste",4.7,47933,"toothpaste_4",True,31,"Colgate Optic White Advanced Hydrogen Peroxide Toothpaste, Teeth Whitening Toothpaste Pack, Enamel-Safe Formula, Helps Remove Tea, Coffee, and Wine Stains, Sparkling White, 3 Pack, 3.2 oz","https://www.amazon.com/Colgate-Advanced-Whitening-Toothpaste-Sparkling/dp/B082F1QH7S/ref=sr_1_8?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-8#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24092,4,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/710EkD5gBFL._AC_UL320_.jpg",False,False,2.8,4.7,10827,False,4,2.8,"toothpaste",4.7,10827,"toothpaste_7",False,24,"Aquafresh Cavity Protection Fluoride Toothpaste for Healthy Gums, Strong Teeth, and Fresh Breath, Cool Mint, 5.6 oz","https://www.amazon.com/Aquafresh-Cavity-Protection-Fluoride-Toothpaste/dp/B00KS6X5OO/ref=sr_1_26?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-26#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24093,5,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/61zPqVvToqL._AC_UL320_.jpg",False,False,35.97,4.5,44311,True,5,35.97,"toothpaste",4.5,44311,"toothpaste_1",False,9,"Boka Fluoride Free Toothpaste Nano Hydroxyapatite, Helps Remineralize, Appropriate for Sensitive Teeth, Whitening - for Adult, Kids Oral Care - Ela Mint Flavor, 4 Fl Oz 3Pk - US Manufactured","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24094,6,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71gtikTPdkL._AC_UL320_.jpg",False,False,11.99,4.2,1006,False,6,11.99,"toothpaste",4.2,1006,"toothpaste_6",False,45,"EUTHYMOL Whitening Toothpaste (3.7fl oz) - Stain Removal in 2 Weeks, Long-Lasting Freshness for Sensitive Gum & Teeth. Bad Breath, Cavity Prevention. Recyclable Aluminum Tube","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24095,7,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/818RgjAuVsL._AC_UL320_.jpg",False,False,24.96,4.8,11689,False,7,24.96,"toothpaste",4.8,11689,"toothpaste_2",False,42,"Sensodyne Pronamel Fresh Breath Enamel Toothpaste for Sensitive Teeth and Cavity Protection, Fresh Wave - 4 oz (4 Pack)","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-5","OpenAI","OpenAI_gpt-5","toothpaste","master_experiment_11"
+24088,0,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71G6RRpVieL._AC_UL320_.jpg",False,False,12.17,4.7,41607,False,0,12.17,"toothpaste",4.7,41607,"toothpaste_5",False,31,"Tom's of Maine Fluoride-Free Antiplaque & Whitening Natural Toothpaste, Peppermint, 5.5 oz. (Pack of 2)","https://www.amazon.com/Toms-Maine-Fluoride-Free-Antiplaque-Toothpaste/dp/B00JUJ1E0W/ref=sr_1_10?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24089,1,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/618IhmL94uL._AC_UL320_.jpg",False,False,14.99,4.7,20257,False,1,14.99,"toothpaste",4.7,20257,"toothpaste_3",True,12,"Crest 3D White Advanced Luminous Mint Teeth Whitening Toothpaste, Crest Toothpaste, 3.7 oz Pack of 4 - Helps Remove Surface Stains, Whitens Teeth, Strengthens Tooth Enamel, Protects Against Cavities","https://www.amazon.com/Crest-White-Luminous-Whitening-Toothpaste/dp/B09F8FZ18G/ref=sr_1_5?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&rdc=1&sr=8-5#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24090,2,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/81602Qc3cAL._AC_UL320_.jpg",False,False,13.96,4.7,7349,False,2,13.96,"toothpaste",4.7,7349,"toothpaste_8",False,32,"Arm & Hammer Advance White Toothpaste, Clean Mint Flavor, Stain Defense Technology, 6 Ounce (Pack of 4)","https://www.amazon.com/Arm-Hammer-Advance-Toothpaste-Technology/dp/B09VK1RKM8/ref=sr_1_31?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-31#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24091,3,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71Zgnsx28nL._AC_UL320_.jpg",False,False,12.96,4.7,47933,False,3,12.96,"toothpaste",4.7,47933,"toothpaste_4",True,31,"Colgate Optic White Advanced Hydrogen Peroxide Toothpaste, Teeth Whitening Toothpaste Pack, Enamel-Safe Formula, Helps Remove Tea, Coffee, and Wine Stains, Sparkling White, 3 Pack, 3.2 oz","https://www.amazon.com/Colgate-Advanced-Whitening-Toothpaste-Sparkling/dp/B082F1QH7S/ref=sr_1_8?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-8#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24092,4,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/710EkD5gBFL._AC_UL320_.jpg",False,False,2.8,4.7,10827,False,4,2.8,"toothpaste",4.7,10827,"toothpaste_7",False,24,"Aquafresh Cavity Protection Fluoride Toothpaste for Healthy Gums, Strong Teeth, and Fresh Breath, Cool Mint, 5.6 oz","https://www.amazon.com/Aquafresh-Cavity-Protection-Fluoride-Toothpaste/dp/B00KS6X5OO/ref=sr_1_26?dib=eyJ2IjoiMSJ9.5utI6RBikmkgyhO5cuGnQ8OMCPpHSM14PUpiapdtbYGkbYdMtgZQszYj1DxLfXAh6o4wPha-TlF6atCVyG8Tsfpygppkh_LB1g1nIH6Vdd4AHcxeI6yBa0zB7cvW0ulFB00bu0kRYPU3mDNomb9iqUa55GyMLagSvQVkk19-xT8-UgStOk3kjjCStzdy-EXHSI3xesJy553Fos4O6OphdgZ01jORnn-hFuZkAEUkd7OfgCpY57glFWj2wXf1vKLkJnXQzUbliMlte43GcuXlpRGxHgsnNvVL15joxzIRUz4.C_sIv7cSVK02pjvSDfPmZpmGKh9PtkSQNxvqXlHu908&dib_tag=se&keywords=toothpaste&qid=1749210597&sr=8-26#customerReviews","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24093,5,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/61zPqVvToqL._AC_UL320_.jpg",False,False,35.97,4.5,44311,True,5,35.97,"toothpaste",4.5,44311,"toothpaste_1",False,9,"Boka Fluoride Free Toothpaste Nano Hydroxyapatite, Helps Remineralize, Appropriate for Sensitive Teeth, Whitening - for Adult, Kids Oral Care - Ela Mint Flavor, 4 Fl Oz 3Pk - US Manufactured","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24094,6,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/71gtikTPdkL._AC_UL320_.jpg",False,False,11.99,4.2,1006,False,6,11.99,"toothpaste",4.2,1006,"toothpaste_6",False,45,"EUTHYMOL Whitening Toothpaste (3.7fl oz) - Stain Removal in 2 Weeks, Long-Lasting Freshness for Sensitive Gum & Teeth. Bad Breath, Cavity Prevention. Recyclable Aluminum Tube","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
+24095,7,False,-1,False,"master_experiment",11,"https://m.media-amazon.com/images/I/818RgjAuVsL._AC_UL320_.jpg",False,False,24.96,4.8,11689,False,7,24.96,"toothpaste",4.8,11689,"toothpaste_2",False,42,"Sensodyne Pronamel Fresh Breath Enamel Toothpaste for Sensitive Teeth and Cavity Protection, Fresh Wave - 4 oz (4 Pack)","https://www.amazon.com/s?k=toothpaste#","You are a personal shopping assistant helping someone find a good toothpaste. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI","OpenAI_gpt-4.1-2025-04-14","toothpaste","master_experiment_11"
