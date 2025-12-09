@@ -140,16 +140,14 @@ def load_base_dataset(path: Path) -> pd.DataFrame:
 
 def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None) -> int:
     """
-    Run ACES exactly like your original app:
-      - uv run
-      - screenshot runtime
-      - same CLI flags
-    But stream the backend logs into the Streamlit UI while it runs.
+    Run ACES via uv + screenshot runtime, quietly:
+    - no backend logs are shown in the Streamlit UI
+    - just return the process return code
     """
     cmd = [
         "uv", "run",
         str(BASE_DIR / "run.py"),
-        "--runtime-type", "screenshot",          # 👈 same as first code
+        "--runtime-type", "screenshot",
         "--local-dataset", str(local_dataset),
         "--include", model,
     ]
@@ -157,42 +155,20 @@ def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None) -
     if prompt and prompt.strip():
         cmd.extend(["--prompt-override", prompt.strip()])
 
-    # Live backend log panel
-    with st.status(
-        "Your Agent is Shopping with your custom prompt... Running ACES (screenshot runtime).",
-        expanded=True,
-    ) as status:
-        log_placeholder = st.empty()
+    # Just run ACES; don't print or stream stdout/stderr to the UI
+    result = subprocess.run(
+        cmd,
+        cwd=str(BASE_DIR),
+        text=True,
+        capture_output=True,  # we capture but don't display
+    )
 
-        process = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            cwd=str(BASE_DIR),
-            bufsize=1,
-        )
+    # Optional: if you ever want to debug locally, you can inspect result.stdout / result.stderr
+    # print(result.stdout)
+    # print(result.stderr, file=sys.stderr)
 
-        log_lines: list[str] = []
+    return result.returncode
 
-        # Stream ACES logs line-by-line
-        for line in process.stdout:  # type: ignore[arg-type]
-            line = line.rstrip("\n")
-            log_lines.append(line)
-            # show recent chunk so UI stays snappy
-            log_placeholder.code("\n".join(log_lines[-60:]))
-
-        retcode = process.wait()
-
-        if retcode == 0:
-            status.update(label="ACES run completed ✅", state="complete")
-        else:
-            status.update(label="ACES run failed ❌", state="error")
-
-    if retcode != 0:
-        st.error("ACES screenshot runtime failed. See log above for details.")
-
-    return retcode
 
 def get_latest_experiment_csv(dataset_name: str) -> Path | None:
     root = EXPERIMENT_LOGS_DIR / dataset_name
@@ -461,10 +437,15 @@ if run_button:
         if dataset_log_dir.exists():
             shutil.rmtree(dataset_log_dir)
 
-        # 🚀 2. Run ACES with the *current* prompt
-        retcode = run_aces(dataset_selected, model_selected, prompt=user_prompt)
+        # 🚀 2. Run ACES with the *current* prompt (no backend logs shown)
+        with st.status(
+            "Your Agent is Shopping with your custom prompt...",
+            expanded=False,
+        ):
+            retcode = run_aces(dataset_selected, model_selected, prompt=user_prompt)
 
         if retcode != 0:
+            st.error("ACES run failed. Please try again.")
             st.stop()
 
         # 📄 3. Read the latest experiment_data.csv (freshly created)
@@ -491,6 +472,7 @@ if run_button:
     st.session_state["df"] = df_run
     st.session_state["agent_sku"] = agent_sku
     st.rerun()
+
 
 
 # ======================================================
