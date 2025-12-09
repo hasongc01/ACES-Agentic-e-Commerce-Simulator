@@ -138,26 +138,28 @@ def load_base_dataset(path: Path) -> pd.DataFrame:
 
 def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None):
     cmd = [
-        # sys.executable,                    # use the current Python
         "uv", "run",
         str(BASE_DIR / "run.py"),
         "--runtime-type", "screenshot",
         "--local-dataset", str(local_dataset),
         "--include", model,
-        "--experiment-count-limit", "1",  # optional but keeps it light
-
     ]
+
     if prompt and prompt.strip():
         cmd.extend(["--prompt-override", prompt.strip()])
-    result = subprocess.run(cmd, capture_output=True, text=True, cwd=str(BASE_DIR))
 
-    # Optional: if something goes wrong, surface it in the UI so you can debug
+    result = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        cwd=str(BASE_DIR),
+    )
+
+    # Optional: show logs if ACES fails so it doesn't hard-crash
     if result.returncode != 0:
         st.error("ACES run failed. See logs below.")
         st.code(result.stdout + "\n\n" + result.stderr)
-        return None
 
-        
     return result
 
 def get_latest_experiment_csv(dataset_name: str) -> Path | None:
@@ -386,18 +388,19 @@ df = st.session_state["df"]
 # RUN EXPERIMENT OR LOAD PRECOMPUTED (sets agent_sku)
 # ======================================================
 if run_button:
-    # Custom prompt → run ACES
     if prompt_mode_key == "custom":
+        # 🚀 Run ACES just like the old file, but only for custom mode
         with st.status(
-            "Your Agent is Shopping with your custom prompt... Running may take up to two minutes.",
+            "Your Agent is Shopping with your custom prompt... This may take up to a couple of minutes.",
             expanded=True,
         ):
             res = run_aces(dataset_selected, model_selected, prompt=user_prompt)
 
-        if res is None:
-            # ACES failed and we already showed the logs
+        # If ACES failed, we already showed logs; just stop cleanly
+        if res is not None and res.returncode != 0:
             st.stop()
 
+        # Read the latest experiment_data.csv from experiment_logs/<dataset_slug>/...
         csv_path = get_latest_experiment_csv(dataset_slug)
         if not csv_path:
             st.error("No experiment_data.csv found — ACES may not have produced output.")
@@ -405,13 +408,13 @@ if run_button:
 
         df_run = pd.read_csv(csv_path)
 
-    # Predefined prompt modes → load from streamlit_datasets, filtered by model  🔽 NEW
     else:
+        # 📁 Precomputed modes: use your streamlit_datasets CSVs
         df_run = load_precomputed_results(dataset_slug, prompt_mode_key, model_selected)
         if df_run is None or df_run.empty:
             st.stop()
 
-    # Detect agent selection from this run (unchanged)
+    # 🔻 Common selection + state update logic for both branches
     agent_sku = None
     if "selected" in df_run.columns:
         picked = df_run[df_run["selected"] != 0]
