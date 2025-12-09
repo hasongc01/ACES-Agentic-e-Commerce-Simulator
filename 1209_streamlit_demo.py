@@ -139,7 +139,7 @@ def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None):
     cmd = [
         "uv", "run",
         str(BASE_DIR / "run.py"),
-        "--runtime-type", "simple",
+        "--runtime-type", "screenshot",
         "--local-dataset", str(local_dataset),
         "--include", model,
     ]
