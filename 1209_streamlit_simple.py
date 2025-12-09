@@ -3,6 +3,8 @@ import pandas as pd
 import subprocess
 from pathlib import Path
 import sys 
+import shutil
+
 
 # ======================================================
 # STREAMLIT PAGE CONFIG
@@ -417,17 +419,55 @@ df = st.session_state["df"]
 # ======================================================
 # RUN EXPERIMENT OR LOAD PRECOMPUTED (sets agent_sku)
 # ======================================================
+# if run_button:
+#     if prompt_mode_key == "custom":
+#         # 🚀 Run ACES EXACTLY like the original app, but only for custom mode
+#         with st.status(
+#             "Your Agent is Shopping with your custom prompt... Please wait patiently ...",
+#             expanded=True,
+#         ):
+#             res = run_aces(dataset_selected, model_selected, prompt=user_prompt)
+#             # (original code just ran it; optionally you could log res.stdout/res.stderr)
+
+#         # Same logic as before: look for latest experiment_data.csv under experiment_logs/<dataset_slug>/...
+#         csv_path = get_latest_experiment_csv(dataset_slug)
+#         if not csv_path:
+#             st.error("No experiment_data.csv found — ACES may not have produced output.")
+#             st.stop()
+
+#         df_run = pd.read_csv(csv_path)
+
+#     else:
+#         # 📁 Precomputed modes: use your streamlit_datasets CSVs
+#         df_run = load_precomputed_results(dataset_slug, prompt_mode_key, model_selected)
+#         if df_run is None or df_run.empty:
+#             st.stop()
+
+#     # 🔻 Common selection + state update logic for both branches
+#     agent_sku = None
+#     if "selected" in df_run.columns:
+#         picked = df_run[df_run["selected"] != 0]
+#         if not picked.empty:
+#             agent_sku = picked.iloc[0]["sku"]
+
+#     st.session_state["df"] = df_run
+#     st.session_state["agent_sku"] = agent_sku
+#     st.rerun()
+
 if run_button:
     if prompt_mode_key == "custom":
-        # 🚀 Run ACES EXACTLY like the original app, but only for custom mode
-        with st.status(
-            "Your Agent is Shopping with your custom prompt... Please wait patiently ...",
-            expanded=True,
-        ):
-            res = run_aces(dataset_selected, model_selected, prompt=user_prompt)
-            # (original code just ran it; optionally you could log res.stdout/res.stderr)
+        # 🔄 1. Clear previous experiment logs for this dataset
+        dataset_log_dir = EXPERIMENT_LOGS_DIR / dataset_slug
+        if dataset_log_dir.exists():
+            shutil.rmtree(dataset_log_dir)
 
-        # Same logic as before: look for latest experiment_data.csv under experiment_logs/<dataset_slug>/...
+        # 🚀 2. Run ACES with the *current* prompt
+        retcode = run_aces(dataset_selected, model_selected, prompt=user_prompt)
+
+        if retcode != 0:
+            st.stop()
+
+        # 📄 3. Read the latest experiment_data.csv (freshly created)
         csv_path = get_latest_experiment_csv(dataset_slug)
         if not csv_path:
             st.error("No experiment_data.csv found — ACES may not have produced output.")
@@ -441,7 +481,7 @@ if run_button:
         if df_run is None or df_run.empty:
             st.stop()
 
-    # 🔻 Common selection + state update logic for both branches
+    # 🔻 Common selection + state update logic
     agent_sku = None
     if "selected" in df_run.columns:
         picked = df_run[df_run["selected"] != 0]
