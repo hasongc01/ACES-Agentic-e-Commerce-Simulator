@@ -164,6 +164,7 @@ cython_debug/
 
 *_experiment_logs
 experiment_logs
+streamlit_datasets
 datasets/**/screenshots/*
 local_datasets/**/screenshots/*
 .DS_store

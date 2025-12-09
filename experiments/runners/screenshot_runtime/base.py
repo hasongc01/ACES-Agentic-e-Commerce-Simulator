@@ -11,7 +11,7 @@ from agent.src.exceptions import AgentException
 from agent.src.logger import create_logger
 from agent.src.shopper import SimulatedShopper
 from agent.src.typedefs import EngineParams, EngineType
-from experiments.config import ExperimentData
+from experiments.config import ExperimentData, DEFAULT_PROMPT_TEMPLATE
 from experiments.dataset_environment import DatasetShoppingEnvironment
 from experiments.filesystem_environment import FilesystemShoppingEnvironment
 from experiments.results import aggregate_run_data
@@ -36,10 +36,13 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
         local_dataset_path: Optional[str] = None,
         hf_dataset_name: Optional[str] = None,
         hf_subset: Optional[str] = None,
+        prompt_override: Optional[str] = None,   # 👈 NEW
     ):
         """
         Initialize the unified screenshot runtime.
         """
+        self.prompt_override = prompt_override   # 👈 NEW
+
         self.experiment_loader = ExperimentLoader(
             engine_params=engine_params_list,
             experiment_count_limit=experiment_count_limit,
@@ -151,6 +154,23 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
         try:
             experiment_df = data.experiment_df.copy()
 
+            # ✅ New: Build the actual prompt we’ll send to the agent
+            if self.prompt_override and self.prompt_override.strip():
+                # ✅ Use the override as the *requirements_text* (completely replacing the old one)
+                override_text = self.prompt_override.strip()
+
+                combined_prompt = DEFAULT_PROMPT_TEMPLATE.format(
+                    query=data.query,
+                    requirements_text=override_text,
+                )
+            else:
+                # ✅ Fall back to whatever ExperimentData generated from InstructionConfig
+                combined_prompt = data.prompt_template
+
+            # Store final prompt in the DF for logging
+            experiment_df["prompt"] = combined_prompt
+
+
             with create_logger(
                 data.query,
                 output_dir=model_output_dir,
@@ -161,7 +181,9 @@ class ScreenshotRuntime(BaseEvaluationRuntime):
                 silent=True,
             ) as logger:
                 shopper = SimulatedShopper(
-                    initial_message=data.prompt_template,
+                    # initial_message=data.prompt_template,
+                    initial_message=combined_prompt,   # 👈 NEW: use combined prompt
+
                     engine_params=engine_params,
                     environment=environment,
                     logger=logger,

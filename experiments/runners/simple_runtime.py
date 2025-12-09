@@ -82,6 +82,8 @@ class SimpleEvaluationRuntime(BaseEvaluationRuntime):
         experiment_count_limit: Optional[int] = None,
         experiment_label_filter: Optional[str] = None,
         debug_mode: bool = False,
+        prompt_override: Optional[str] = None,   # 👈 NEW
+
     ):
         """
         Initialize the SimpleEvaluationRuntime.
@@ -108,6 +110,7 @@ class SimpleEvaluationRuntime(BaseEvaluationRuntime):
         self.experiment_count_limit = experiment_count_limit
         self.experiment_label_filter = experiment_label_filter
         self.server = None
+        self.prompt_override = prompt_override      # 👈NEW
 
         # Register cleanup function
         atexit.register(self._cleanup)
@@ -144,6 +147,30 @@ class SimpleEvaluationRuntime(BaseEvaluationRuntime):
         """
         experiment_df = data.experiment_df.copy()
 
+        # 👈NEW: Build combined prompt (base template + optional override)
+        base_prompt = data.prompt_template
+        _print(f"[DEBUG] base_prompt (first 120 chars): {base_prompt[:120]!r}")
+        _print(f"[DEBUG] prompt_override: {self.prompt_override!r}")
+        
+        if self.prompt_override and self.prompt_override.strip():
+            combined_prompt = (
+                base_prompt.rstrip()
+                + "\n\nAdditional user preference:\n"
+                + self.prompt_override.strip()
+            )
+        else:
+            combined_prompt = base_prompt
+    
+        _print(f"[DEBUG] combined_prompt (last 200 chars): {combined_prompt[-200:]!r}")
+
+         # Optional: log the actual prompt we used into the DF
+        if "prompt" in experiment_df.columns:
+            experiment_df["prompt"] = combined_prompt
+        else:
+            # make sure prompt column exists if it didn't
+            experiment_df["prompt"] = combined_prompt
+
+
         # Check if experiment already exists
         if data.experiment_label and data.experiment_number is not None:
             journey_dir = data.journey_dir(self.run_output_dir, engine_params)
@@ -169,7 +196,8 @@ class SimpleEvaluationRuntime(BaseEvaluationRuntime):
                 experiment_number=data.experiment_number,
             ) as logger:
                 shopper = SimulatedShopper(
-                    initial_message=data.prompt_template,
+                    initial_message= combined_prompt, # 👈 NEW: use combined prompt
+                    # initial_message=data.prompt_template,
                     engine_params=engine_params,
                     environment=environment,
                     logger=logger,
