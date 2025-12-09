@@ -138,8 +138,8 @@ def load_base_dataset(path: Path) -> pd.DataFrame:
 
 def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None):
     cmd = [
-        sys.executable,                    # use the current Python
-        # "uv", "run",
+        # sys.executable,                    # use the current Python
+        "uv", "run",
         str(BASE_DIR / "run.py"),
         "--runtime-type", "screenshot",
         "--local-dataset", str(local_dataset),
@@ -397,7 +397,7 @@ if run_button:
         if res is None:
             # ACES failed and we already showed the logs
             st.stop()
-            
+
         csv_path = get_latest_experiment_csv(dataset_slug)
         if not csv_path:
             st.error("No experiment_data.csv found — ACES may not have produced output.")
