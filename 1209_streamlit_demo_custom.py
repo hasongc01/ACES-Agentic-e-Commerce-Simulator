@@ -144,6 +144,8 @@ def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None):
         "--runtime-type", "screenshot",
         "--local-dataset", str(local_dataset),
         "--include", model,
+        "--experiment-count-limit", "1",  # optional but keeps it light
+
     ]
     if prompt and prompt.strip():
         cmd.extend(["--prompt-override", prompt.strip()])
@@ -153,6 +155,8 @@ def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None):
     if result.returncode != 0:
         st.error("ACES run failed. See logs below.")
         st.code(result.stdout + "\n\n" + result.stderr)
+        return None
+
         
     return result
 
@@ -384,9 +388,16 @@ df = st.session_state["df"]
 if run_button:
     # Custom prompt → run ACES
     if prompt_mode_key == "custom":
-        with st.status("Your Agent is Shopping with your custom prompt... Running may take up to two minutes.", expanded=True):
-            _ = run_aces(dataset_selected, model_selected, prompt=user_prompt)
+        with st.status(
+            "Your Agent is Shopping with your custom prompt... Running may take up to two minutes.",
+            expanded=True,
+        ):
+            res = run_aces(dataset_selected, model_selected, prompt=user_prompt)
 
+        if res is None:
+            # ACES failed and we already showed the logs
+            st.stop()
+            
         csv_path = get_latest_experiment_csv(dataset_slug)
         if not csv_path:
             st.error("No experiment_data.csv found — ACES may not have produced output.")
