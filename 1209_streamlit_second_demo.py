@@ -47,6 +47,20 @@ st.markdown(
             color: #4b5563;
             margin: 0.2rem 0 0.4rem 0;
         }
+
+        .instructions-text {
+            /* Use the same font as the rest of the app (including sidebar) */
+            font-family: var(--font);
+            font-size: 3.0rem;
+            color: #111827;
+            margin-top: 0;
+        }
+
+        section[data-testid="stSidebar"] * {
+            font-family: var(--font);
+        }
+
+        
     </style>
     """,
     unsafe_allow_html=True,
@@ -59,10 +73,16 @@ st.markdown(
 st.markdown(
     """
     <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.2rem;">
-        <span style="font-size:1.4rem;">🛒 <strong>Agent Shopping Simulator</strong></span>
+        <span style="
+            font-size:1.4rem;
+            font-family: var(--font);
+            color: #111827;
+        ">
+            🛒 <strong>Agentic Shopping Simulator</strong>
+        </span>
     </div>
 
-    <p style="font-size:0.85rem; color:#6b7280; margin-top:0;">
+    <p class="instructions-text">
         1. Choose a product category &amp; Gen AI model<br>
         2. Choose a prompt mode<br>
         3. Click <em>Run Simulator</em> to see the agent's choice highlighted in red
@@ -391,44 +411,6 @@ if "df" not in st.session_state:
 
 df = st.session_state["df"]
 
-# ======================================================
-# RUN EXPERIMENT OR LOAD PRECOMPUTED (sets agent_sku)
-# ======================================================
-# if run_button:
-#     if prompt_mode_key == "custom":
-#         # 🚀 Run ACES EXACTLY like the original app, but only for custom mode
-#         with st.status(
-#             "Your Agent is Shopping with your custom prompt... Please wait patiently ...",
-#             expanded=True,
-#         ):
-#             res = run_aces(dataset_selected, model_selected, prompt=user_prompt)
-#             # (original code just ran it; optionally you could log res.stdout/res.stderr)
-
-#         # Same logic as before: look for latest experiment_data.csv under experiment_logs/<dataset_slug>/...
-#         csv_path = get_latest_experiment_csv(dataset_slug)
-#         if not csv_path:
-#             st.error("No experiment_data.csv found — ACES may not have produced output.")
-#             st.stop()
-
-#         df_run = pd.read_csv(csv_path)
-
-#     else:
-#         # 📁 Precomputed modes: use your streamlit_datasets CSVs
-#         df_run = load_precomputed_results(dataset_slug, prompt_mode_key, model_selected)
-#         if df_run is None or df_run.empty:
-#             st.stop()
-
-#     # 🔻 Common selection + state update logic for both branches
-#     agent_sku = None
-#     if "selected" in df_run.columns:
-#         picked = df_run[df_run["selected"] != 0]
-#         if not picked.empty:
-#             agent_sku = picked.iloc[0]["sku"]
-
-#     st.session_state["df"] = df_run
-#     st.session_state["agent_sku"] = agent_sku
-#     st.rerun()
-
 if run_button:
     if prompt_mode_key == "custom":
         # 🔄 1. Clear previous experiment logs for this dataset
@@ -483,153 +465,6 @@ if "assigned_position" in df.columns:
 
 agent_selected_sku = st.session_state.get("agent_sku", None)  # None before first run
 
-# ======================================================
-# GRID VIEW WITH AGENT HIGHLIGHT (UI format unchanged)
-# ======================================================
-# sku_order_current = df["sku"].tolist()
-# sku_to_row = {row["sku"]: row for _, row in df.iterrows()}
-
-# num_cols = 4
-# cols = st.columns(num_cols)
-
-# def rating_to_stars(rating: float) -> str:
-#     """Return a 5-star string like ★★★★☆ based on the numeric rating."""
-#     if rating is None:
-#         return "☆☆☆☆☆"
-#     try:
-#         r = float(rating)
-#     except (TypeError, ValueError):
-#         return "☆☆☆☆☆"
-
-#     # Buckets: 2.5–3.4 → 3 stars, 3.5–4.4 → 4, 4.5–5 → 5
-#     if r >= 4.5:
-#         filled = 5
-#     elif r >= 3.5:
-#         filled = 4
-#     elif r >= 2.5:
-#         filled = 3
-#     elif r > 0:
-#         filled = 2
-#     else:
-#         filled = 0
-
-#     total = 5
-#     return "★" * filled + "☆" * (total - filled)
-
-# for i, sku in enumerate(sku_order_current):
-#     if sku not in sku_to_row:
-#         continue
-
-#     row = sku_to_row[sku]
-#     is_agent_pick = (agent_selected_sku is not None and sku == agent_selected_sku)
-
-#     with cols[i % num_cols]:
-#         # Outer card: this is what gets the big red border for the selected product
-#         outer_style = (
-#             "border: 3px solid #dc2626; background-color:#fef3c7; "
-#             "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-#             if is_agent_pick
-#             else
-#             "border: 1px solid #e5e7eb; background-color:#ffffff; "
-#             "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-#         )
-#         # If you ever want the whole card bordered in red instead of just the image,
-#         # uncomment these two lines:
-#         # st.markdown(f'<div style="{outer_style}">', unsafe_allow_html=True)
-
-#         # --- IMAGE AREA (just the image, same as original) ---
-#         render_product_image(row.get("image_url"), highlight=is_agent_pick)
-
-#         # --- WHITE CONTENT AREA UNDER IMAGE ---
-#         st.markdown(
-#             '<div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">',
-#             unsafe_allow_html=True,
-#         )
-
-#         # Title (up to 4 lines, ellipsis handled by CSS class)
-#         full_title = str(row["title"])
-#         title_color = "#dc2626" if is_agent_pick else "#111827"
-#         st.markdown(
-#             f"""
-#             <div class="product-title" style="color:{title_color};">
-#                 {full_title}
-#             </div>
-#             """,
-#             unsafe_allow_html=True,
-#         )
-
-#         # Stars + (# reviews)
-#         rating = row.get("rating", None)
-#         rating_count = row.get("rating_count", None)
-#         if rating is not None and pd.notna(rating):
-#             stars = rating_to_stars(rating)
-#             reviews_part = ""
-#             if rating_count is not None and pd.notna(rating_count):
-#                 reviews_part = f" ({int(rating_count)})"
-#             st.markdown(
-#                 f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>',
-#                 unsafe_allow_html=True,
-#             )
-
-#         # Price row
-#         price = row.get("price", None)
-#         if price is not None and pd.notna(price):
-#             st.markdown(
-#                 f'<p class="product-meta"><strong>${float(price):.2f}</strong></p>',
-#                 unsafe_allow_html=True,
-#             )
-
-#         # --- Bottom row: Add to Cart (left) + pill (right) ---
-#         low_stock = bool(row.get("low_stock", False))
-#         stock_quantity = row.get("stock_quantity", None)
-#         overall_pick = bool(row.get("overall_pick", False))
-#         sponsored = bool(row.get("sponsored", False))
-
-#         # Decide which pill to show (priority: low_stock > overall_pick > sponsored)
-#         pill_html = ""
-#         if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
-#             pill_html = (
-#                 '<span style="background-color:#f97316; color:white; '
-#                 'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-#                 'white-space:nowrap;">Only '
-#                 f'{int(stock_quantity)} left</span>'
-#             )
-#         elif overall_pick:
-#             pill_html = (
-#                 '<span style="background-color:#1d4ed8; color:white; '
-#                 'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-#                 'white-space:nowrap;">Overall pick</span>'
-#             )
-#         elif sponsored:
-#             pill_html = (
-#                 '<span style="background-color:#6b7280; color:white; '
-#                 'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-#                 'white-space:nowrap;">Sponsored</span>'
-#             )
-
-#         st.markdown(
-#             f"""
-#             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
-#                 <button type="button" style="
-#                     text-decoration:none;
-#                     background-color:#f59e0b;
-#                     color:#111827;
-#                     padding:6px 14px;
-#                     border-radius:999px;
-#                     font-size:0.8rem;
-#                     font-weight:600;
-#                 ">
-#                     Add to Cart
-#                 </button>
-#                 {pill_html}
-#             </div>
-#             """,
-#             unsafe_allow_html=True,
-#         )
-
-#         st.markdown("</div>", unsafe_allow_html=True)  # white body
-#         # st.markdown("</div>", unsafe_allow_html=True)  # outer card (if you uncomment above)
-
 sku_order_current = df["sku"].tolist()
 sku_to_row = {row["sku"]: row for _, row in df.iterrows()}
 
@@ -679,7 +514,6 @@ for i, sku in enumerate(sku_order_current):
             "border: 1px solid #e5e7eb; background-color:#ffffff; "
             "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
         )
-        # st.markdown(f'<div style="{outer_style}">', unsafe_allow_html=True)
 
         # --- IMAGE AREA (just the image, no extra empty grey box) ---
         render_product_image(row.get("image_url"), highlight=is_agent_pick)
