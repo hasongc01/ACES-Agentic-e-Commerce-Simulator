@@ -97,7 +97,8 @@ st.markdown(
     <p class="instructions-text">
         1. Choose a product category &amp; Gen AI model<br>
         2. Choose a prompt mode<br>
-        3. Click <em>Run Simulator</em> to see the agent's choice highlighted in red
+        3. Click <em>Run Simulator</em> to see the agent's choice highlighted in red<br>
+        4. Optional: Click <em> Change Position</em> to see how position affects agent's choice
     </p>
     """,
     unsafe_allow_html=True,
@@ -364,8 +365,12 @@ prompt_mode_label = st.sidebar.selectbox(
 )
 prompt_mode_key = PROMPT_MODE_LABEL_TO_KEY[prompt_mode_label]
 
+# >>> PUT THE MODEL-CHANGE RESET BLOCK HERE <<<
 # ======================================================
-# RESET random_position when LLM model changes
+# RESET on LLM model change:
+# - revert to ORIGINAL (no random_position)
+# - clear highlighted selection
+# - show base dataset until user clicks Run Simulator / Change position
 # ======================================================
 if "prev_model_selected" not in st.session_state:
     st.session_state["prev_model_selected"] = model_selected
@@ -373,76 +378,16 @@ if "prev_model_selected" not in st.session_state:
 if st.session_state["prev_model_selected"] != model_selected:
     st.session_state["prev_model_selected"] = model_selected
 
-    # Always revert to original positions on model change
     st.session_state["rand_variant"] = 0
     st.session_state["rand_clicks"] = 0
 
-    # If using precomputed modes, immediately reload ORIGINAL dataset for the new model
-    if prompt_mode_key != "custom":
-        df_run = load_precomputed_results(
-            dataset_slug=dataset_slug,
-            prompt_mode_key=prompt_mode_key,
-            model_selected=model_selected,
-            rand_variant=0,  # ORIGINAL
-        )
+    st.session_state["agent_sku"] = None
+    st.session_state["agent_title"] = None
 
-        if df_run is not None and not df_run.empty:
-            agent_sku, agent_title = extract_agent_pick(df_run)
-            st.session_state["df"] = df_run
-            st.session_state["agent_sku"] = agent_sku
-            st.session_state["agent_title"] = agent_title
-        else:
-            # Fallback to base dataset if the filtered precomputed file is empty
-            base_df = load_base_dataset(dataset_selected)
-            st.session_state["df"] = base_df
-            st.session_state["agent_sku"] = None
-            st.session_state["agent_title"] = None
+    st.session_state["df"] = load_base_dataset(dataset_selected)
 
     st.rerun()
 
-# ------------------------------------------------------
-# Change position button (Default prompt only)
-# Behavior:
-# - Click 1 => load random_position dataset 1
-# - Click 2 => load random_position dataset 2
-# - Click 3+ => disabled/grey (locked)
-# ------------------------------------------------------
-if prompt_mode_key != "default":
-    # Any non-default mode => force-reset random state and keep button disabled
-    st.session_state["rand_variant"] = 0
-    st.session_state["rand_clicks"] = 0
-
-change_pos_disabled = (prompt_mode_key != "default") or (st.session_state["rand_clicks"] >= 2)
-
-change_pos_clicked = st.sidebar.button(
-    "🔀 Change position",
-    disabled=change_pos_disabled,
-    help="Default prompt only. Click 1 loads random dataset 1; click 2 loads random dataset 2; then it locks.",
-)
-
-if prompt_mode_key == "default":
-    label = "Original" if st.session_state["rand_variant"] == 0 else f"Random {st.session_state['rand_variant']}"
-    # st.sidebar.caption(f"Position mode: {label}")
-
-if change_pos_clicked and not change_pos_disabled:
-    # Advance 0 -> 1 -> 2, then lock
-    st.session_state["rand_clicks"] += 1
-    st.session_state["rand_variant"] = st.session_state["rand_clicks"]  # 1 then 2
-
-    df_run = load_precomputed_results(
-        dataset_slug=dataset_slug,
-        prompt_mode_key="default",
-        model_selected=model_selected,
-        rand_variant=st.session_state["rand_variant"],
-    )
-    if df_run is None or df_run.empty:
-        st.stop()
-
-    agent_sku, agent_title = extract_agent_pick(df_run)
-    st.session_state["df"] = df_run
-    st.session_state["agent_sku"] = agent_sku
-    st.session_state["agent_title"] = agent_title
-    st.rerun()
 
 # ------------------------------------------------------
 # Prompt text UI
@@ -510,8 +455,6 @@ if "df" not in st.session_state:
     st.session_state["df"] = load_base_dataset(dataset_selected)
 
 df = st.session_state["df"]
-
-st.session_state["prev_model_selected"] = model_selected
 
 # ======================================================
 # RUN EXPERIMENT OR LOAD PRECOMPUTED (sets agent_sku)
@@ -686,3 +629,46 @@ with st.container(border=True):
             )
 
             st.markdown("</div>", unsafe_allow_html=True)  # close white body
+
+# ======================================================
+# CHANGE POSITION (LAST BUTTON ON PAGE)
+# Put this at the VERY END of the script (after the grid)
+# ======================================================
+
+# Only Default prompt can change position; otherwise reset and disable
+if prompt_mode_key != "default":
+    st.session_state["rand_variant"] = 0
+    st.session_state["rand_clicks"] = 0
+
+change_pos_disabled = (prompt_mode_key != "default") or (st.session_state["rand_clicks"] >= 2)
+
+change_pos_clicked = st.sidebar.button(
+    "🔀 Change position",
+    disabled=change_pos_disabled,
+    help="Click to see product's change in position in the mock marketplace.",
+    key="change_position_last",  # unique key so you don't collide with any old widget
+)
+
+# Optional status text (not a button)
+if prompt_mode_key == "default":
+    label = "Original" if st.session_state["rand_variant"] == 0 else f"Random {st.session_state['rand_variant']}"
+    st.sidebar.caption(f"Position mode: {label}")
+
+if change_pos_clicked and not change_pos_disabled:
+    st.session_state["rand_clicks"] += 1
+    st.session_state["rand_variant"] = st.session_state["rand_clicks"]  # 1 then 2
+
+    df_run = load_precomputed_results(
+        dataset_slug=dataset_slug,
+        prompt_mode_key="default",
+        model_selected=model_selected,
+        rand_variant=st.session_state["rand_variant"],
+    )
+    if df_run is None or df_run.empty:
+        st.stop()
+
+    agent_sku, agent_title = extract_agent_pick(df_run)
+    st.session_state["df"] = df_run
+    st.session_state["agent_sku"] = agent_sku
+    st.session_state["agent_title"] = agent_title
+    st.rerun()
