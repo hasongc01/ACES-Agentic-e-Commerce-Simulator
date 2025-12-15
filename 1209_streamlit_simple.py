@@ -48,6 +48,13 @@ st.markdown(
             margin: 0.2rem 0 0.4rem 0;
         }
 
+        .instructions-text {
+            font-family: var(--font);
+            font-size: 1.2rem;   /* bigger than default; adjust as you like */
+            color: #000000;       /* pure black */
+            margin-top: 0;
+        }
+
         .mock-marketplace-title {
             font-family: var(--font);
             font-size: 1.2rem;
@@ -409,40 +416,6 @@ df = st.session_state["df"]
 # ======================================================
 # RUN EXPERIMENT OR LOAD PRECOMPUTED (sets agent_sku)
 # ======================================================
-# if run_button:
-#     if prompt_mode_key == "custom":
-#         # 🚀 Run ACES EXACTLY like the original app, but only for custom mode
-#         with st.status(
-#             "Your Agent is Shopping with your custom prompt... Please wait patiently ...",
-#             expanded=True,
-#         ):
-#             res = run_aces(dataset_selected, model_selected, prompt=user_prompt)
-#             # (original code just ran it; optionally you could log res.stdout/res.stderr)
-
-#         # Same logic as before: look for latest experiment_data.csv under experiment_logs/<dataset_slug>/...
-#         csv_path = get_latest_experiment_csv(dataset_slug)
-#         if not csv_path:
-#             st.error("No experiment_data.csv found — ACES may not have produced output.")
-#             st.stop()
-
-#         df_run = pd.read_csv(csv_path)
-
-#     else:
-#         # 📁 Precomputed modes: use your streamlit_datasets CSVs
-#         df_run = load_precomputed_results(dataset_slug, prompt_mode_key, model_selected)
-#         if df_run is None or df_run.empty:
-#             st.stop()
-
-#     # 🔻 Common selection + state update logic for both branches
-#     agent_sku = None
-#     if "selected" in df_run.columns:
-#         picked = df_run[df_run["selected"] != 0]
-#         if not picked.empty:
-#             agent_sku = picked.iloc[0]["sku"]
-
-#     st.session_state["df"] = df_run
-#     st.session_state["agent_sku"] = agent_sku
-#     st.rerun()
 
 if run_button:
     if prompt_mode_key == "custom":
@@ -626,23 +599,27 @@ for i, sku in enumerate(sku_order_current):
         st.markdown(
             f"""
             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
-                <button type="button" style="
-                    text-decoration:none;
-                    background-color:#f59e0b;
-                    color:#111827;
-                    padding:6px 14px;
-                    border-radius:999px;
+                <span style="
                     font-size:0.8rem;
-                    font-weight:600;
+                    font-weight:500;
+                    color:#111827;
+                    background-color:#facc15;  /* light yellow fill */
+                    border:1px solid #facc15;  /* deeper yellow border */
+                    padding:4px 8px;
+                    border-radius:4px;         /* small rounding; use 0px if you want perfect square corners */
+                    display:inline-block;
                 ">
                     Add to Cart
-                </button>
+                </span>
                 {pill_html}
             </div>
             """,
             unsafe_allow_html=True,
         )
 
+
+
         # Close white body + outer card
         st.markdown("</div>", unsafe_allow_html=True)  # white body
         # st.markdown("</div>", unsafe_allow_html=True)  # outer card
+
