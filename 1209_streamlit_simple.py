@@ -55,7 +55,7 @@ st.markdown(
             text-align: center;
             margin: 0 0 0.75rem 0;
         }
-        
+
     </style>
     """,
     unsafe_allow_html=True,
@@ -68,10 +68,16 @@ st.markdown(
 st.markdown(
     """
     <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.2rem;">
-        <span style="font-size:1.4rem;">🛒 <strong>Agent Shopping Simulator</strong></span>
+        <span style="
+            font-size:1.4rem;
+            font-family: var(--font);
+            color: #111827;
+        ">
+            🛒 <strong>Agentic Shopping Simulator</strong>
+        </span>
     </div>
 
-    <p style="font-size:0.85rem; color:#6b7280; margin-top:0;">
+    <p class="instructions-text">
         1. Choose a product category &amp; Gen AI model<br>
         2. Choose a prompt mode<br>
         3. Click <em>Run Simulator</em> to see the agent's choice highlighted in red
