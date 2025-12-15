@@ -281,10 +281,12 @@ def load_precomputed_results(
 # UTIL: UI helpers
 # ======================================================
 def render_product_image(url, highlight=False):
+    img_background = "#f3f4f6"          # you can darken to "#e5e7eb" if you prefer
+
     border = (
         "3px solid #dc2626; background-color:#fef3c7;"
         if highlight
-        else "1px solid #e5e7eb; background-color:#ffffff;"
+        else "1px solid #e5e7eb"
     )
 
     if not url or not isinstance(url, str) or not url.startswith("http"):
