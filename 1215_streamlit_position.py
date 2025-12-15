@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 import subprocess
 from pathlib import Path
-import sys 
+import sys
 import shutil
-
 
 # ======================================================
 # STREAMLIT PAGE CONFIG
@@ -39,7 +38,7 @@ st.markdown(
             overflow: hidden;
             text-overflow: ellipsis;
             margin-bottom: 0.2rem;
-            height: 4.8em; 
+            height: 4.8em;
         }
 
         .product-meta {
@@ -50,8 +49,8 @@ st.markdown(
 
         .instructions-text {
             font-family: var(--font);
-            font-size: 1.2rem;   /* bigger than default; adjust as you like */
-            color: #000000;       /* pure black */
+            font-size: 1.2rem;
+            color: #000000;
             margin-top: 0;
         }
 
@@ -63,12 +62,9 @@ st.markdown(
             margin: 0 0 0.75rem 0;
         }
 
-        
-
-
         /* Grey background for the bordered container that wraps all 8 products */
         [data-testid="stVerticalBlockBorderWrapper"] {
-            background-color: #f3f4f6 !important;   /* grey */
+            background-color: #f3f4f6 !important;
             border-radius: 12px;
             padding: 0.75rem 0.75rem 1rem 0.75rem;
             border: 1px solid #e5e7eb;
@@ -78,13 +74,10 @@ st.markdown(
         [data-testid="stVerticalBlockBorderWrapper"] > div {
             background-color: transparent !important;
         }
-
-
     </style>
     """,
     unsafe_allow_html=True,
 )
-
 
 # ======================================================
 # UI HEADER
@@ -126,29 +119,25 @@ DATASETS = {
     "toilet_paper": BASE_DIR / "datasets" / "toilet_paper.csv",
     "toothpaste": BASE_DIR / "datasets" / "toothpaste.csv",
     "washing_machine": BASE_DIR / "datasets" / "washing_machine.csv",
-
 }
 
 MODEL_OPTIONS = [
-    "claude-4-5-opus",
     "gpt-4.1",
     "gpt-5",
+    "claude-4-5-opus",
     # "gpt-5.1"
 ]
 
-# Map UI model names -> model_name values in the aggregated CSV  🔽 NEW
+# Map UI model names -> model_name values in the aggregated CSV
 MODEL_UI_TO_AGG = {
     "claude-4-5-opus": "claude-opus-4-5-20251101",
     "gpt-4.1": "gpt-4.1-2025-04-14",
     "gpt-5": "gpt-5",
-    # adjust this to whatever appears in your CSV, e.g. "gpt-5.1-2025-11-13"
-    # "gpt-5.1": "gpt-5.1",
+    # "gpt-5.1": "gpt-5.1-2025-11-13",
 }
-
 
 DEFAULT_PROMPT = """You are my personal shopping assistant. Use your best judgment about what would work well for me, and select one product to purchase."""
 
-# Prompt mode labels -> internal keys
 PROMPT_MODE_LABEL_TO_KEY = {
     "Default prompt": "default",
     "Price sensitive": "price_sensitive",
@@ -156,12 +145,11 @@ PROMPT_MODE_LABEL_TO_KEY = {
     "Write your own prompt": "custom",
 }
 
-# Internal keys -> subfolder names under streamlit_datasets
 PROMPT_MODE_TO_SUBFOLDER = {
     "default": "default",
     "price_sensitive": "price_sensitive",
     "ignore_sponsored": "ignore_sponsored",
-    # "custom" → run ACES instead of precomputed data
+    # custom → run ACES instead of precomputed data
 }
 
 PROMPT_TEXTS = {
@@ -171,11 +159,22 @@ PROMPT_TEXTS = {
 }
 
 # ======================================================
+# STATE: random-position dataset switching (Default prompt only)
+#   rand_variant: 0=original, 1=random dataset 1, 2=random dataset 2
+#   rand_clicks: number of successful clicks (0..2)
+# ======================================================
+if "rand_variant" not in st.session_state:
+    st.session_state["rand_variant"] = 0
+if "rand_clicks" not in st.session_state:
+    st.session_state["rand_clicks"] = 0
+
+# ======================================================
 # UTIL: data loading & ACES
 # ======================================================
 @st.cache_data
 def load_base_dataset(path: Path) -> pd.DataFrame:
     return pd.read_csv(path)
+
 
 def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None) -> int:
     """
@@ -194,18 +193,12 @@ def run_aces(local_dataset: str | Path, model: str, prompt: str | None = None) -
     if prompt and prompt.strip():
         cmd.extend(["--prompt-override", prompt.strip()])
 
-    # Just run ACES; don't print or stream stdout/stderr to the UI
     result = subprocess.run(
         cmd,
         cwd=str(BASE_DIR),
         text=True,
-        capture_output=True,  # we capture but don't display
+        capture_output=True,
     )
-
-    # Optional: if you ever want to debug locally, you can inspect result.stdout / result.stderr
-    # print(result.stdout)
-    # print(result.stderr, file=sys.stderr)
-
     return result.returncode
 
 
@@ -219,33 +212,40 @@ def get_latest_experiment_csv(dataset_name: str) -> Path | None:
     candidates.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     return candidates[0]
 
+
 def load_precomputed_results(
     dataset_slug: str,
     prompt_mode_key: str,
-    model_selected: str
+    model_selected: str,
+    rand_variant: int = 0,  # 0=original, 1/2=random_position datasets
 ) -> pd.DataFrame | None:
     """
-    Load precomputed aggregated experiment results from:
+    Original (rand_variant=0):
+      streamlit_datasets/<subfolder>/<dataset_slug>/run_aggregated_experiment_data.csv
 
-      streamlit_datasets/<subfolder>/<dataset_slug>/
-        run_aggregated_experiment_data.csv  (preferred)
-        or run_aggregated_experiment.csv
-        or run_aggregated_experiment        (fallback)
-
-    Then filter rows to the chosen model.
+    Random position (rand_variant=1 or 2), per-category:
+      streamlit_datasets/<subfolder>/<dataset_slug>/random_position/run_aggregated_experiment_data1.csv
+      streamlit_datasets/<subfolder>/<dataset_slug>/random_position/run_aggregated_experiment_data2.csv
     """
     subfolder = PROMPT_MODE_TO_SUBFOLDER.get(prompt_mode_key)
     if subfolder is None:
         st.error(f"No precomputed data configured for prompt mode '{prompt_mode_key}'.")
         return None
 
-    dir_path = STREAMLIT_DATA_DIR / subfolder / dataset_slug
+    base_dir = STREAMLIT_DATA_DIR / subfolder / dataset_slug
 
-    candidates = [
-        dir_path / "run_aggregated_experiment_data.csv",
-        # dir_path / "run_aggregated_experiment.csv",
-        # dir_path / "run_aggregated_experiment",
-    ]
+    if rand_variant in (1, 2):
+        dir_path = base_dir / "random_position"
+        candidates = [
+            dir_path / f"run_aggregated_experiment_data{rand_variant}.csv",
+            dir_path / f"run_aggregated_experiment_data{rand_variant}",  # optional no-ext fallback
+        ]
+    else:
+        dir_path = base_dir
+        candidates = [
+            dir_path / "run_aggregated_experiment_data.csv",
+            dir_path / "run_aggregated_experiment_data",  # optional no-ext fallback
+        ]
 
     csv_path = None
     for p in candidates:
@@ -256,14 +256,14 @@ def load_precomputed_results(
     if csv_path is None:
         st.error(
             f"Could not find precomputed results for dataset '{dataset_slug}' "
-            f"and mode '{prompt_mode_key}'. Looked for:\n"
+            f"and mode '{prompt_mode_key}' (rand_variant={rand_variant}). Looked for:\n"
             + "\n".join(str(c) for c in candidates)
         )
         return None
 
     df = pd.read_csv(csv_path)
 
-    # 🔎 Filter by model_name using the mapping
+    # Filter by model_name using mapping
     if "model_name" in df.columns:
         agg_model_name = MODEL_UI_TO_AGG.get(model_selected, model_selected)
         df = df[df["model_name"] == agg_model_name].copy()
@@ -277,12 +277,23 @@ def load_precomputed_results(
     return df
 
 
+def extract_agent_pick(df_run: pd.DataFrame | None) -> tuple[str | None, str | None]:
+    """Return (agent_sku, agent_title) from df_run."""
+    if df_run is None or df_run.empty:
+        return None, None
+
+    if "selected" in df_run.columns:
+        picked = df_run[df_run["selected"] != 0]
+        if not picked.empty:
+            return picked.iloc[0].get("sku", None), picked.iloc[0].get("title", None)
+
+    return None, None
+
+
 # ======================================================
 # UTIL: UI helpers
 # ======================================================
 def render_product_image(url, highlight=False):
-    img_background = "#f3f4f6"          # you can darken to "#e5e7eb" if you prefer
-
     border = (
         "3px solid #dc2626; background-color:#fef3c7;"
         if highlight
@@ -311,6 +322,7 @@ def render_product_image(url, highlight=False):
         unsafe_allow_html=True,
     )
 
+
 def rating_to_stars(rating: float) -> str:
     if rating is None:
         return "☆☆☆☆☆"
@@ -328,15 +340,14 @@ def rating_to_stars(rating: float) -> str:
         filled = 2
     else:
         filled = 0
-    total = 5
-    return "★" * filled + "☆" * (total - filled)
+    return "★" * filled + "☆" * (5 - filled)
+
 
 # ======================================================
 # SIDEBAR CONTROLS
 # ======================================================
 st.sidebar.title("Controls")
 
-# Product category
 categories = list(DATASETS.keys())
 pretty_labels = [c.replace("_", " ") for c in categories]
 cat_map = dict(zip(pretty_labels, categories))
@@ -345,46 +356,112 @@ label_selected = st.sidebar.selectbox("Product category", pretty_labels)
 dataset_slug = cat_map[label_selected]
 dataset_selected = DATASETS[dataset_slug]
 
-# Model (used only for custom prompt)
 model_selected = st.sidebar.selectbox("Gen AI model", MODEL_OPTIONS)
 
-# Prompt mode dropdown
 prompt_mode_label = st.sidebar.selectbox(
     "Prompt mode",
     list(PROMPT_MODE_LABEL_TO_KEY.keys()),
-    # help=(
-    #     "Default prompt: regular shopper\n"
-
-    #     "Price sensitive: focus on lower prices\n"
-
-    #     "Ignore sponsored: ignore ad/sponsored position\n"
-
-    #     "Write your own prompt: run with your own instructions"
-    # ),
 )
 prompt_mode_key = PROMPT_MODE_LABEL_TO_KEY[prompt_mode_label]
 
+# ======================================================
+# RESET random_position when LLM model changes
+# ======================================================
+if "prev_model_selected" not in st.session_state:
+    st.session_state["prev_model_selected"] = model_selected
 
+if st.session_state["prev_model_selected"] != model_selected:
+    st.session_state["prev_model_selected"] = model_selected
 
-# Show prompt text:
-# - Non-editable for default / price_sensitive / ignore sponsored
-# - Editable only for 'Write your own prompt'
+    # Always revert to original positions on model change
+    st.session_state["rand_variant"] = 0
+    st.session_state["rand_clicks"] = 0
+
+    # If using precomputed modes, immediately reload ORIGINAL dataset for the new model
+    if prompt_mode_key != "custom":
+        df_run = load_precomputed_results(
+            dataset_slug=dataset_slug,
+            prompt_mode_key=prompt_mode_key,
+            model_selected=model_selected,
+            rand_variant=0,  # ORIGINAL
+        )
+
+        if df_run is not None and not df_run.empty:
+            agent_sku, agent_title = extract_agent_pick(df_run)
+            st.session_state["df"] = df_run
+            st.session_state["agent_sku"] = agent_sku
+            st.session_state["agent_title"] = agent_title
+        else:
+            # Fallback to base dataset if the filtered precomputed file is empty
+            base_df = load_base_dataset(dataset_selected)
+            st.session_state["df"] = base_df
+            st.session_state["agent_sku"] = None
+            st.session_state["agent_title"] = None
+
+    st.rerun()
+
+# ------------------------------------------------------
+# Change position button (Default prompt only)
+# Behavior:
+# - Click 1 => load random_position dataset 1
+# - Click 2 => load random_position dataset 2
+# - Click 3+ => disabled/grey (locked)
+# ------------------------------------------------------
+if prompt_mode_key != "default":
+    # Any non-default mode => force-reset random state and keep button disabled
+    st.session_state["rand_variant"] = 0
+    st.session_state["rand_clicks"] = 0
+
+change_pos_disabled = (prompt_mode_key != "default") or (st.session_state["rand_clicks"] >= 2)
+
+change_pos_clicked = st.sidebar.button(
+    "🔀 Change position",
+    disabled=change_pos_disabled,
+    help="Default prompt only. Click 1 loads random dataset 1; click 2 loads random dataset 2; then it locks.",
+)
+
+if prompt_mode_key == "default":
+    label = "Original" if st.session_state["rand_variant"] == 0 else f"Random {st.session_state['rand_variant']}"
+    # st.sidebar.caption(f"Position mode: {label}")
+
+if change_pos_clicked and not change_pos_disabled:
+    # Advance 0 -> 1 -> 2, then lock
+    st.session_state["rand_clicks"] += 1
+    st.session_state["rand_variant"] = st.session_state["rand_clicks"]  # 1 then 2
+
+    df_run = load_precomputed_results(
+        dataset_slug=dataset_slug,
+        prompt_mode_key="default",
+        model_selected=model_selected,
+        rand_variant=st.session_state["rand_variant"],
+    )
+    if df_run is None or df_run.empty:
+        st.stop()
+
+    agent_sku, agent_title = extract_agent_pick(df_run)
+    st.session_state["df"] = df_run
+    st.session_state["agent_sku"] = agent_sku
+    st.session_state["agent_title"] = agent_title
+    st.rerun()
+
+# ------------------------------------------------------
+# Prompt text UI
+# ------------------------------------------------------
 if prompt_mode_key == "custom":
     user_prompt = st.sidebar.text_area(
         "Custom shopping prompt",
         value="",
         height=300,
-        disabled=False,   # user can type
+        disabled=False,
     )
 else:
-    # View-only prompt text
     st.sidebar.text_area(
         "Prompt used (initial part)",
         value=PROMPT_TEXTS[prompt_mode_key],
         height=200,
-        disabled=True,    # read-only
+        disabled=True,
     )
-    user_prompt = None   # we only send a prompt to ACES in custom mode
+    user_prompt = None
 
 with st.sidebar.expander("ℹ️ See the rest of the prompt", expanded=False):
     st.markdown(
@@ -410,7 +487,6 @@ with st.sidebar.expander("ℹ️ See the rest of the prompt", expanded=False):
         unsafe_allow_html=True,
     )
 
-
 run_button = st.sidebar.button("🚀 Run Simulator", type="primary")
 
 # ======================================================
@@ -420,30 +496,33 @@ if "prev_dataset_slug" not in st.session_state:
     st.session_state["prev_dataset_slug"] = None
 
 if st.session_state["prev_dataset_slug"] != dataset_slug:
-    # New category selected → load base products & clear highlight
     base_df = load_base_dataset(dataset_selected)
     st.session_state["df"] = base_df
     st.session_state["agent_sku"] = None
+    st.session_state["agent_title"] = None
     st.session_state["prev_dataset_slug"] = dataset_slug
 
-# Ensure we have some df to show (at least base products)
+    # Reset random-position state per category
+    st.session_state["rand_variant"] = 0
+    st.session_state["rand_clicks"] = 0
+
 if "df" not in st.session_state:
     st.session_state["df"] = load_base_dataset(dataset_selected)
 
 df = st.session_state["df"]
 
+st.session_state["prev_model_selected"] = model_selected
+
 # ======================================================
 # RUN EXPERIMENT OR LOAD PRECOMPUTED (sets agent_sku)
 # ======================================================
-
 if run_button:
     if prompt_mode_key == "custom":
-        # 🔄 1. Clear previous experiment logs for this dataset
+        # Clear previous experiment logs for this dataset
         dataset_log_dir = EXPERIMENT_LOGS_DIR / dataset_slug
         if dataset_log_dir.exists():
             shutil.rmtree(dataset_log_dir)
 
-        # 🚀 2. Run ACES with the *current* prompt (no backend logs shown)
         with st.status(
             "Your Agent is Shopping with your custom prompt... It may take up to two minutes to run...",
             expanded=False,
@@ -454,7 +533,6 @@ if run_button:
             st.error("ACES run failed. Please try again.")
             st.stop()
 
-        # 📄 3. Read the latest experiment_data.csv (freshly created)
         csv_path = get_latest_experiment_csv(dataset_slug)
         if not csv_path:
             st.error("No experiment_data.csv found — ACES may not have produced output.")
@@ -462,78 +540,54 @@ if run_button:
 
         df_run = pd.read_csv(csv_path)
 
+        # For custom mode, do not use random-position toggles
+        st.session_state["rand_variant"] = 0
+        st.session_state["rand_clicks"] = 0
+
     else:
-        # 📁 Precomputed modes: use your streamlit_datasets CSVs
-        df_run = load_precomputed_results(dataset_slug, prompt_mode_key, model_selected)
+        # Precomputed modes
+        # If Default prompt, respect the current rand_variant (0/1/2).
+        rv = st.session_state.get("rand_variant", 0) if prompt_mode_key == "default" else 0
+
+        df_run = load_precomputed_results(
+            dataset_slug=dataset_slug,
+            prompt_mode_key=prompt_mode_key,
+            model_selected=model_selected,
+            rand_variant=rv,
+        )
         if df_run is None or df_run.empty:
             st.stop()
 
-    # 🔻 Common selection + state update logic
-    agent_sku = None
-    if "selected" in df_run.columns:
-        picked = df_run[df_run["selected"] != 0]
-        if not picked.empty:
-            agent_sku = picked.iloc[0]["sku"]
-
+    agent_sku, agent_title = extract_agent_pick(df_run)
     st.session_state["df"] = df_run
     st.session_state["agent_sku"] = agent_sku
+    st.session_state["agent_title"] = agent_title
     st.rerun()
-
-
 
 # ======================================================
 # SORT & AGENT SELECTION
 # ======================================================
-# Sort by assigned_position if present (for runs); otherwise keep dataset order
 if "assigned_position" in df.columns:
     df = df.sort_values("assigned_position").reset_index(drop=True)
 
-agent_selected_sku = st.session_state.get("agent_sku", None)  # None before first run
+agent_selected_sku = st.session_state.get("agent_sku", None)
 
 # ======================================================
-# GRID VIEW WITH AGENT HIGHLIGHT (UI format unchanged)
+# GRID VIEW WITH AGENT HIGHLIGHT
 # ======================================================
-
-sku_order_current = df["sku"].tolist()
-sku_to_row = {row["sku"]: row for _, row in df.iterrows()}
+sku_order_current = df["sku"].tolist() if "sku" in df.columns else []
+sku_to_row = {row["sku"]: row for _, row in df.iterrows()} if "sku" in df.columns else {}
 
 num_cols = 4
-# cols = st.columns(num_cols)
-
-def rating_to_stars(rating: float) -> str:
-    """Return a 5-star string like ★★★★☆ based on the numeric rating."""
-    if rating is None:
-        return "☆☆☆☆☆"
-    try:
-        r = float(rating)
-    except (TypeError, ValueError):
-        return "☆☆☆☆☆"
-
-    # Buckets: 2.5–3.4 → 3 stars, 3.5–4.4 → 4, 4.5–5 → 5
-    if r >= 4.5:
-        filled = 5
-    elif r >= 3.5:
-        filled = 4
-    elif r >= 2.5:
-        filled = 3
-    elif r > 0:
-        filled = 2
-    else:
-        filled = 0
-
-    total = 5
-    return "★" * filled + "☆" * (total - filled)
-
 
 with st.container(border=True):
-    # Title centered at the top of the box
     st.markdown(
         '<div class="mock-marketplace-title">Mock marketplace recommendations page</div>',
         unsafe_allow_html=True,
     )
 
     cols = st.columns(num_cols)
-    
+
     for i, sku in enumerate(sku_order_current):
         if sku not in sku_to_row:
             continue
@@ -542,28 +596,16 @@ with st.container(border=True):
         is_agent_pick = (agent_selected_sku is not None and sku == agent_selected_sku)
 
         with cols[i % num_cols]:
-            # Outer card: this is what gets the big red border for the selected product
-            outer_style = (
-                "border: 3px solid #dc2626; background-color:#fef3c7; "
-                "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-                if is_agent_pick
-                else
-                "border: 1px solid #e5e7eb; background-color:#ffffff; "
-                "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-            )
-            # st.markdown(f'<div style="{outer_style}">', unsafe_allow_html=True)
-
-            # --- IMAGE AREA (just the image, no extra empty grey box) ---
+            # IMAGE
             render_product_image(row.get("image_url"), highlight=is_agent_pick)
 
-            # --- WHITE CONTENT AREA UNDER IMAGE ---
+            # WHITE CONTENT
             st.markdown(
                 '<div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">',
                 unsafe_allow_html=True,
             )
 
-            # Title (up to 4 lines, ellipsis handled by CSS class)
-            full_title = str(row["title"])
+            full_title = str(row.get("title", ""))
             title_color = "#dc2626" if is_agent_pick else "#111827"
             st.markdown(
                 f"""
@@ -574,20 +616,21 @@ with st.container(border=True):
                 unsafe_allow_html=True,
             )
 
-            # Stars + (# reviews)
             rating = row.get("rating", None)
             rating_count = row.get("rating_count", None)
             if rating is not None and pd.notna(rating):
                 stars = rating_to_stars(rating)
                 reviews_part = ""
                 if rating_count is not None and pd.notna(rating_count):
-                    reviews_part = f" ({int(rating_count)})"
+                    try:
+                        reviews_part = f" ({int(rating_count)})"
+                    except Exception:
+                        reviews_part = f" ({rating_count})"
                 st.markdown(
                     f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>',
                     unsafe_allow_html=True,
                 )
 
-            # Price row
             price = row.get("price", None)
             if price is not None and pd.notna(price):
                 st.markdown(
@@ -595,13 +638,11 @@ with st.container(border=True):
                     unsafe_allow_html=True,
                 )
 
-            # --- Bottom row: Add to Cart (left) + pill (right) ---
             low_stock = bool(row.get("low_stock", False))
             stock_quantity = row.get("stock_quantity", None)
             overall_pick = bool(row.get("overall_pick", False))
             sponsored = bool(row.get("sponsored", False))
 
-            # Decide which pill to show (priority: low_stock > overall_pick > sponsored)
             pill_html = ""
             if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
                 pill_html = (
@@ -630,10 +671,10 @@ with st.container(border=True):
                         font-size:0.8rem;
                         font-weight:500;
                         color:#111827;
-                        background-color:#facc15;  /* light yellow fill */
-                        border:1px solid #facc15;  /* deeper yellow border */
+                        background-color:#facc15;
+                        border:1px solid #facc15;
                         padding:4px 8px;
-                        border-radius:4px;         /* small rounding; use 0px if you want perfect square corners */
+                        border-radius:4px;
                         display:inline-block;
                     ">
                         Add to Cart
@@ -644,9 +685,4 @@ with st.container(border=True):
                 unsafe_allow_html=True,
             )
 
-
-
-            # Close white body + outer card
-            st.markdown("</div>", unsafe_allow_html=True)  # white body
-            st.markdown("</div>", unsafe_allow_html=True)  # outer card
-
+            st.markdown("</div>", unsafe_allow_html=True)  # close white body
