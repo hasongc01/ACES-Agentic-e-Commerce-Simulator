@@ -63,6 +63,23 @@ st.markdown(
             margin: 0 0 0.75rem 0;
         }
 
+        
+
+
+        /* Grey background for the bordered container that wraps all 8 products */
+        [data-testid="stVerticalBlockBorderWrapper"] {
+            background-color: #f3f4f6 !important;   /* grey */
+            border-radius: 12px;
+            padding: 0.75rem 0.75rem 1rem 0.75rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Make the inner content transparent so the grey shows through */
+        [data-testid="stVerticalBlockBorderWrapper"] > div {
+            background-color: transparent !important;
+        }
+
+
     </style>
     """,
     unsafe_allow_html=True,
@@ -479,7 +496,7 @@ sku_order_current = df["sku"].tolist()
 sku_to_row = {row["sku"]: row for _, row in df.iterrows()}
 
 num_cols = 4
-cols = st.columns(num_cols)
+# cols = st.columns(num_cols)
 
 def rating_to_stars(rating: float) -> str:
     """Return a 5-star string like ★★★★☆ based on the numeric rating."""
@@ -506,120 +523,128 @@ def rating_to_stars(rating: float) -> str:
     return "★" * filled + "☆" * (total - filled)
 
 
+with st.container(border=True):
+    # Title centered at the top of the box
+    st.markdown(
+        '<div class="mock-marketplace-title">Mock marketplace recommendations page</div>',
+        unsafe_allow_html=True,
+    )
 
-for i, sku in enumerate(sku_order_current):
-    if sku not in sku_to_row:
-        continue
+    cols = st.columns(num_cols)
+    
+    for i, sku in enumerate(sku_order_current):
+        if sku not in sku_to_row:
+            continue
 
-    row = sku_to_row[sku]
-    is_agent_pick = (agent_selected_sku is not None and sku == agent_selected_sku)
+        row = sku_to_row[sku]
+        is_agent_pick = (agent_selected_sku is not None and sku == agent_selected_sku)
 
-    with cols[i % num_cols]:
-        # Outer card: this is what gets the big red border for the selected product
-        outer_style = (
-            "border: 3px solid #dc2626; background-color:#fef3c7; "
-            "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-            if is_agent_pick
-            else
-            "border: 1px solid #e5e7eb; background-color:#ffffff; "
-            "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-        )
-        # st.markdown(f'<div style="{outer_style}">', unsafe_allow_html=True)
+        with cols[i % num_cols]:
+            # Outer card: this is what gets the big red border for the selected product
+            outer_style = (
+                "border: 3px solid #dc2626; background-color:#fef3c7; "
+                "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
+                if is_agent_pick
+                else
+                "border: 1px solid #e5e7eb; background-color:#ffffff; "
+                "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
+            )
+            # st.markdown(f'<div style="{outer_style}">', unsafe_allow_html=True)
 
-        # --- IMAGE AREA (just the image, no extra empty grey box) ---
-        render_product_image(row.get("image_url"), highlight=is_agent_pick)
+            # --- IMAGE AREA (just the image, no extra empty grey box) ---
+            render_product_image(row.get("image_url"), highlight=is_agent_pick)
 
-        # --- WHITE CONTENT AREA UNDER IMAGE ---
-        st.markdown(
-            '<div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">',
-            unsafe_allow_html=True,
-        )
-
-        # Title (up to 4 lines, ellipsis handled by CSS class)
-        full_title = str(row["title"])
-        title_color = "#dc2626" if is_agent_pick else "#111827"
-        st.markdown(
-            f"""
-            <div class="product-title" style="color:{title_color};">
-                {full_title}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        # Stars + (# reviews)
-        rating = row.get("rating", None)
-        rating_count = row.get("rating_count", None)
-        if rating is not None and pd.notna(rating):
-            stars = rating_to_stars(rating)
-            reviews_part = ""
-            if rating_count is not None and pd.notna(rating_count):
-                reviews_part = f" ({int(rating_count)})"
+            # --- WHITE CONTENT AREA UNDER IMAGE ---
             st.markdown(
-                f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>',
+                '<div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">',
                 unsafe_allow_html=True,
             )
 
-        # Price row
-        price = row.get("price", None)
-        if price is not None and pd.notna(price):
+            # Title (up to 4 lines, ellipsis handled by CSS class)
+            full_title = str(row["title"])
+            title_color = "#dc2626" if is_agent_pick else "#111827"
             st.markdown(
-                f'<p class="product-meta"><strong>${float(price):.2f}</strong></p>',
+                f"""
+                <div class="product-title" style="color:{title_color};">
+                    {full_title}
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
-        # --- Bottom row: Add to Cart (left) + pill (right) ---
-        low_stock = bool(row.get("low_stock", False))
-        stock_quantity = row.get("stock_quantity", None)
-        overall_pick = bool(row.get("overall_pick", False))
-        sponsored = bool(row.get("sponsored", False))
+            # Stars + (# reviews)
+            rating = row.get("rating", None)
+            rating_count = row.get("rating_count", None)
+            if rating is not None and pd.notna(rating):
+                stars = rating_to_stars(rating)
+                reviews_part = ""
+                if rating_count is not None and pd.notna(rating_count):
+                    reviews_part = f" ({int(rating_count)})"
+                st.markdown(
+                    f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>',
+                    unsafe_allow_html=True,
+                )
 
-        # Decide which pill to show (priority: low_stock > overall_pick > sponsored)
-        pill_html = ""
-        if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
-            pill_html = (
-                '<span style="background-color:#f97316; color:white; '
-                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-                'white-space:nowrap;">Only '
-                f'{int(stock_quantity)} left</span>'
+            # Price row
+            price = row.get("price", None)
+            if price is not None and pd.notna(price):
+                st.markdown(
+                    f'<p class="product-meta"><strong>${float(price):.2f}</strong></p>',
+                    unsafe_allow_html=True,
+                )
+
+            # --- Bottom row: Add to Cart (left) + pill (right) ---
+            low_stock = bool(row.get("low_stock", False))
+            stock_quantity = row.get("stock_quantity", None)
+            overall_pick = bool(row.get("overall_pick", False))
+            sponsored = bool(row.get("sponsored", False))
+
+            # Decide which pill to show (priority: low_stock > overall_pick > sponsored)
+            pill_html = ""
+            if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
+                pill_html = (
+                    '<span style="background-color:#f97316; color:white; '
+                    'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+                    'white-space:nowrap;">Only '
+                    f'{int(stock_quantity)} left</span>'
+                )
+            elif overall_pick:
+                pill_html = (
+                    '<span style="background-color:#1d4ed8; color:white; '
+                    'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+                    'white-space:nowrap;">Overall pick</span>'
+                )
+            elif sponsored:
+                pill_html = (
+                    '<span style="background-color:#6b7280; color:white; '
+                    'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+                    'white-space:nowrap;">Sponsored</span>'
+                )
+
+            st.markdown(
+                f"""
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                    <span style="
+                        font-size:0.8rem;
+                        font-weight:500;
+                        color:#111827;
+                        background-color:#facc15;  /* light yellow fill */
+                        border:1px solid #facc15;  /* deeper yellow border */
+                        padding:4px 8px;
+                        border-radius:4px;         /* small rounding; use 0px if you want perfect square corners */
+                        display:inline-block;
+                    ">
+                        Add to Cart
+                    </span>
+                    {pill_html}
+                </div>
+                """,
+                unsafe_allow_html=True,
             )
-        elif overall_pick:
-            pill_html = (
-                '<span style="background-color:#1d4ed8; color:white; '
-                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-                'white-space:nowrap;">Overall pick</span>'
-            )
-        elif sponsored:
-            pill_html = (
-                '<span style="background-color:#6b7280; color:white; '
-                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-                'white-space:nowrap;">Sponsored</span>'
-            )
-
-        st.markdown(
-            f"""
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
-                <span style="
-                    font-size:0.8rem;
-                    font-weight:500;
-                    color:#111827;
-                    background-color:#facc15;  /* light yellow fill */
-                    border:1px solid #facc15;  /* deeper yellow border */
-                    padding:4px 8px;
-                    border-radius:4px;         /* small rounding; use 0px if you want perfect square corners */
-                    display:inline-block;
-                ">
-                    Add to Cart
-                </span>
-                {pill_html}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
 
 
 
-        # Close white body + outer card
-        st.markdown("</div>", unsafe_allow_html=True)  # white body
-        # st.markdown("</div>", unsafe_allow_html=True)  # outer card
+            # Close white body + outer card
+            st.markdown("</div>", unsafe_allow_html=True)  # white body
+            st.markdown("</div>", unsafe_allow_html=True)  # outer card
 
