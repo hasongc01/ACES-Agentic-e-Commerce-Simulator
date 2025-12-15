@@ -47,6 +47,15 @@ st.markdown(
             color: #4b5563;
             margin: 0.2rem 0 0.4rem 0;
         }
+
+        .mock-marketplace-title {
+            font-family: var(--font);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 0 0.75rem 0;
+        }
+        
     </style>
     """,
     unsafe_allow_html=True,
