@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 import sys 
 import shutil
+import textwrap
 
 
 # ======================================================
@@ -27,6 +28,9 @@ st.markdown(
             padding: 0.2rem 0.6rem;
             border-radius: 999px;
         }
+        
+        
+
 
         .product-title {
             font-size: 0.9rem;
@@ -60,6 +64,48 @@ st.markdown(
             font-family: var(--font);
         }
 
+        .mock-marketplace-wrapper {
+            background-color: #f3f4f6;      /* grey box */
+            border-radius: 12px;
+            padding: 0.75rem 0.75rem 1rem 0.75rem;
+            border: 1px solid #e5e7eb;
+            margin-top: 0.75rem;
+        }
+
+        .mock-marketplace-title {
+            font-family: var(--font);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .mock-marketplace-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .product-card-outer {
+            border-radius: 16px;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .product-card-outer.agent-pick {
+            border: 3px solid #dc2626;
+            background-color: #fef3c7;
+        }
+        .add-to-cart-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #f59e0b;
+            color: #111827;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
         
     </style>
     """,
@@ -468,143 +514,124 @@ agent_selected_sku = st.session_state.get("agent_sku", None)  # None before firs
 sku_order_current = df["sku"].tolist()
 sku_to_row = {row["sku"]: row for _, row in df.iterrows()}
 
-num_cols = 4
-cols = st.columns(num_cols)
+def build_product_card_html(row, is_agent_pick: bool) -> str:
+    # image
+    url = row.get("image_url")
+    if not url or not isinstance(url, str) or not url.startswith("http"):
+        url = "https://via.placeholder.com/300"
 
-def rating_to_stars(rating: float) -> str:
-    """Return a 5-star string like ★★★★☆ based on the numeric rating."""
-    if rating is None:
-        return "☆☆☆☆☆"
-    try:
-        r = float(rating)
-    except (TypeError, ValueError):
-        return "☆☆☆☆☆"
+    border = (
+        "3px solid #dc2626; background-color:#fef3c7;"
+        if is_agent_pick
+        else "1px solid #e5e7eb; background-color:#ffffff;"
+    )
 
-    # Buckets: 2.5–3.4 → 3 stars, 3.5–4.4 → 4, 4.5–5 → 5
-    if r >= 4.5:
-        filled = 5
-    elif r >= 3.5:
-        filled = 4
-    elif r >= 2.5:
-        filled = 3
-    elif r > 0:
-        filled = 2
-    else:
-        filled = 0
+    # rating
+    rating = row.get("rating", None)
+    rating_count = row.get("rating_count", None)
+    rating_html = ""
+    if rating is not None and pd.notna(rating):
+        stars = rating_to_stars(rating)
+        reviews_part = ""
+        if rating_count is not None and pd.notna(rating_count):
+            reviews_part = f" ({int(rating_count)})"
+        rating_html = (
+            f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>'
+        )
 
-    total = 5
-    return "★" * filled + "☆" * (total - filled)
+    # price
+    price = row.get("price", None)
+    price_html = ""
+    if price is not None and pd.notna(price):
+        price_html = (
+            f'<p class="product-meta"><strong>${float(price):.2f}</strong></p>'
+        )
 
+    # pill
+    low_stock = bool(row.get("low_stock", False))
+    stock_quantity = row.get("stock_quantity", None)
+    overall_pick = bool(row.get("overall_pick", False))
+    sponsored = bool(row.get("sponsored", False))
 
+    pill_html = ""
+    if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
+        pill_html = (
+            '<span style="background-color:#f97316; color:white; '
+            'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+            'white-space:nowrap;">Only '
+            f'{int(stock_quantity)} left</span>'
+        )
+    elif overall_pick:
+        pill_html = (
+            '<span style="background-color:#1d4ed8; color:white; '
+            'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+            'white-space:nowrap;">Overall pick</span>'
+        )
+    elif sponsored:
+        pill_html = (
+            '<span style="background-color:#6b7280; color:white; '
+            'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
+            'white-space:nowrap;">Sponsored</span>'
+        )
 
-for i, sku in enumerate(sku_order_current):
+    title_color = "#dc2626" if is_agent_pick else "#111827"
+    full_title = str(row["title"])
+
+    return textwrap.dedent(
+        f"""
+        <div class="product-card-outer{' agent-pick' if is_agent_pick else ''}">
+            <div style="
+                background-color:#f3f4f6;
+                border-radius:12px;
+                padding:8px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                height:180px;
+                margin-bottom:0.5rem;
+                border:{border};
+            ">
+                <img src="{url}" style="max-width:100%; max-height:100%; object-fit:contain;" />
+            </div>
+
+            <div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">
+                <div class="product-title" style="color:{title_color};">
+                    {full_title}
+                </div>
+                {rating_html}
+                {price_html}
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                    <span class="add-to-cart-btn">
+                        Add to Cart
+                    </span>
+                    {pill_html}
+                </div>
+
+            </div>
+        </div>
+        """
+    )
+
+# Build all cards as one HTML grid
+cards = []
+for sku in sku_order_current:
     if sku not in sku_to_row:
         continue
-
     row = sku_to_row[sku]
     is_agent_pick = (agent_selected_sku is not None and sku == agent_selected_sku)
+    cards.append(build_product_card_html(row, is_agent_pick))
 
-    with cols[i % num_cols]:
-        # Outer card: this is what gets the big red border for the selected product
-        outer_style = (
-            "border: 3px solid #dc2626; background-color:#fef3c7; "
-            "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-            if is_agent_pick
-            else
-            "border: 1px solid #e5e7eb; background-color:#ffffff; "
-            "border-radius: 16px; padding: 10px; margin-bottom: 12px;"
-        )
+cards_html = "\n".join(cards)
 
-        # --- IMAGE AREA (just the image, no extra empty grey box) ---
-        render_product_image(row.get("image_url"), highlight=is_agent_pick)
+html = (
+    '<div class="mock-marketplace-wrapper">'
+    '<div class="mock-marketplace-title">'
+    'Mock marketplace recommendations page'
+    '</div>'
+    '<div class="mock-marketplace-grid">'
+    f'{cards_html}'
+    '</div>'
+    '</div>'
+)
 
-        # --- WHITE CONTENT AREA UNDER IMAGE ---
-        st.markdown(
-            '<div style="background-color:#ffffff; padding:8px 6px 10px 6px; border-radius:12px;">',
-            unsafe_allow_html=True,
-        )
-
-        # Title (up to 4 lines, ellipsis handled by CSS class)
-        full_title = str(row["title"])
-        title_color = "#dc2626" if is_agent_pick else "#111827"
-        st.markdown(
-            f"""
-            <div class="product-title" style="color:{title_color};">
-                {full_title}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        # Stars + (# reviews)
-        rating = row.get("rating", None)
-        rating_count = row.get("rating_count", None)
-        if rating is not None and pd.notna(rating):
-            stars = rating_to_stars(rating)
-            reviews_part = ""
-            if rating_count is not None and pd.notna(rating_count):
-                reviews_part = f" ({int(rating_count)})"
-            st.markdown(
-                f'<p class="product-meta">{stars} {float(rating):.1f}{reviews_part}</p>',
-                unsafe_allow_html=True,
-            )
-
-        # Price row
-        price = row.get("price", None)
-        if price is not None and pd.notna(price):
-            st.markdown(
-                f'<p class="product-meta"><strong>${float(price):.2f}</strong></p>',
-                unsafe_allow_html=True,
-            )
-
-        # --- Bottom row: Add to Cart (left) + pill (right) ---
-        low_stock = bool(row.get("low_stock", False))
-        stock_quantity = row.get("stock_quantity", None)
-        overall_pick = bool(row.get("overall_pick", False))
-        sponsored = bool(row.get("sponsored", False))
-
-        # Decide which pill to show (priority: low_stock > overall_pick > sponsored)
-        pill_html = ""
-        if low_stock and stock_quantity is not None and pd.notna(stock_quantity):
-            pill_html = (
-                '<span style="background-color:#f97316; color:white; '
-                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-                'white-space:nowrap;">Only '
-                f'{int(stock_quantity)} left</span>'
-            )
-        elif overall_pick:
-            pill_html = (
-                '<span style="background-color:#1d4ed8; color:white; '
-                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-                'white-space:nowrap;">Overall pick</span>'
-            )
-        elif sponsored:
-            pill_html = (
-                '<span style="background-color:#6b7280; color:white; '
-                'font-size:0.7rem; padding:2px 8px; border-radius:999px; '
-                'white-space:nowrap;">Sponsored</span>'
-            )
-
-        st.markdown(
-            f"""
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
-                <button type="button" style="
-                    text-decoration:none;
-                    background-color:#f59e0b;
-                    color:#111827;
-                    padding:6px 14px;
-                    border-radius:999px;
-                    font-size:0.8rem;
-                    font-weight:600;
-                ">
-                    Add to Cart
-                </button>
-                {pill_html}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        # Close white body + outer card
-        st.markdown("</div>", unsafe_allow_html=True)  # white body
-        # st.markdown("</div>", unsafe_allow_html=True)  # outer card
+st.markdown(html, unsafe_allow_html=True)
