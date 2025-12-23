@@ -166,8 +166,8 @@ PROMPT_TEXTS = {
 # ======================================================
 if "rand_variant" not in st.session_state:
     st.session_state["rand_variant"] = 0
-if "rand_clicks" not in st.session_state:
-    st.session_state["rand_clicks"] = 0
+# if "rand_clicks" not in st.session_state:
+#     st.session_state["rand_clicks"] = 0
 
 # ======================================================
 # UTIL: data loading & ACES
@@ -365,12 +365,15 @@ prompt_mode_label = st.sidebar.selectbox(
 )
 prompt_mode_key = PROMPT_MODE_LABEL_TO_KEY[prompt_mode_label]
 
-# >>> PUT THE MODEL-CHANGE RESET BLOCK HERE <<<
+# manual override for phone layout
+mobile_layout = st.sidebar.checkbox("Mobile layout (2 columns)", value=False)
+num_cols = 2 if mobile_layout else 4
+
 # ======================================================
 # RESET on LLM model change:
 # - revert to ORIGINAL (no random_position)
 # - clear highlighted selection
-# - show base dataset until user clicks Run Simulator / Change position
+# - show base dataset until user clicks Run Simulator / Shuffle listing positions
 # ======================================================
 if "prev_model_selected" not in st.session_state:
     st.session_state["prev_model_selected"] = model_selected
@@ -379,7 +382,7 @@ if st.session_state["prev_model_selected"] != model_selected:
     st.session_state["prev_model_selected"] = model_selected
 
     st.session_state["rand_variant"] = 0
-    st.session_state["rand_clicks"] = 0
+    # st.session_state["rand_clicks"] = 0
 
     st.session_state["agent_sku"] = None
     st.session_state["agent_title"] = None
@@ -449,7 +452,7 @@ if st.session_state["prev_dataset_slug"] != dataset_slug:
 
     # Reset random-position state per category
     st.session_state["rand_variant"] = 0
-    st.session_state["rand_clicks"] = 0
+    # st.session_state["rand_clicks"] = 0
 
 if "df" not in st.session_state:
     st.session_state["df"] = load_base_dataset(dataset_selected)
@@ -485,7 +488,7 @@ if run_button:
 
         # For custom mode, do not use random-position toggles
         st.session_state["rand_variant"] = 0
-        st.session_state["rand_clicks"] = 0
+        # st.session_state["rand_clicks"] = 0
 
     else:
         # Precomputed modes
@@ -520,8 +523,6 @@ agent_selected_sku = st.session_state.get("agent_sku", None)
 # ======================================================
 sku_order_current = df["sku"].tolist() if "sku" in df.columns else []
 sku_to_row = {row["sku"]: row for _, row in df.iterrows()} if "sku" in df.columns else {}
-
-num_cols = 4
 
 with st.container(border=True):
     st.markdown(
@@ -638,15 +639,15 @@ with st.container(border=True):
 # Only Default prompt can change position; otherwise reset and disable
 if prompt_mode_key != "default":
     st.session_state["rand_variant"] = 0
-    st.session_state["rand_clicks"] = 0
+    # st.session_state["rand_clicks"] = 0
 
-change_pos_disabled = (prompt_mode_key != "default") or (st.session_state["rand_clicks"] >= 2)
+change_pos_disabled = (prompt_mode_key != "default")
 
 change_pos_clicked = st.sidebar.button(
-    "🔀 Change position",
+    "🔀 Shuffle listing positions",
     disabled=change_pos_disabled,
-    help="Click to see product's change in position in the mock marketplace.",
-    key="change_position_last",  # unique key so you don't collide with any old widget
+    help="Click Shuffle listing positions to explore how listing positions affect the agent's choice.",
+    key="change_position_last",  
 )
 
 # Optional status text (not a button)
@@ -655,20 +656,26 @@ if prompt_mode_key == "default":
     st.sidebar.caption(f"Position mode: {label}")
 
 if change_pos_clicked and not change_pos_disabled:
-    st.session_state["rand_clicks"] += 1
-    st.session_state["rand_variant"] = st.session_state["rand_clicks"]  # 1 then 2
+    st.session_state["rand_variant"] = (st.session_state.get("rand_variant", 0) + 1) % 3
 
-    df_run = load_precomputed_results(
-        dataset_slug=dataset_slug,
-        prompt_mode_key="default",
-        model_selected=model_selected,
-        rand_variant=st.session_state["rand_variant"],
-    )
-    if df_run is None or df_run.empty:
-        st.stop()
+    # IMPORTANT: do NOT auto-run / do NOT highlight
+    st.session_state["agent_sku"] = None
+    st.session_state["agent_title"] = None
 
-    agent_sku, agent_title = extract_agent_pick(df_run)
-    st.session_state["df"] = df_run
-    st.session_state["agent_sku"] = agent_sku
-    st.session_state["agent_title"] = agent_title
+    # Update the displayed listing order immediately
+    if st.session_state["rand_variant"] == 0:
+        # back to original positions (base dataset)
+        st.session_state["df"] = load_base_dataset(dataset_selected)
+    else:
+        # show shuffled positions (precomputed listing), but still no highlight until Run Simulator
+        df_listing = load_precomputed_results(
+            dataset_slug=dataset_slug,
+            prompt_mode_key="default",
+            model_selected=model_selected,
+            rand_variant=st.session_state["rand_variant"],
+        )
+        if df_listing is None or df_listing.empty:
+            st.stop()
+        st.session_state["df"] = df_listing
+
     st.rerun()
