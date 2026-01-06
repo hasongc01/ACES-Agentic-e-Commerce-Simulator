@@ -98,7 +98,7 @@ st.markdown(
         1. Choose a product category &amp; Gen AI model<br>
         2. Choose a prompt mode<br>
         3. Click <em>Run Simulator</em> to see the agent's choice highlighted in red<br>
-        4. Optional: Click <em> Change Position</em> to see how position affects agent's choice
+        4. Optional: Click <em> Shuffle listing positions </em> to explore how listing positions affect the agent's choice
     </p>
     """,
     unsafe_allow_html=True,
