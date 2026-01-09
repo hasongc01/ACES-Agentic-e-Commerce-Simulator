@@ -1,0 +1,6 @@
+{
+  "product_title": "ESR for iPhone 16 Pro Case, Camera Control, Compatible with MagSafe, Shockproof Military-Grade Protection, Magnetic Phone Case for iPhone 16 Pr...",
+  "price": 12.99,
+  "rating": 4.6,
+  "number_of_reviews": 109440
+}

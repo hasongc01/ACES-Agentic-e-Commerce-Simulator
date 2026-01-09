@@ -1,0 +1,12 @@
+engine_type: anthropic
+model: claude-opus-4-5-20251101
+api_key: None
+temperature: 1.0
+max_new_tokens: None
+base_url: None
+endpoint_url: None
+thinking: {'type': 'enabled', 'budget_tokens': 500}
+rate_limit: -1
+effort: low
+top_p: None
+top_k: None

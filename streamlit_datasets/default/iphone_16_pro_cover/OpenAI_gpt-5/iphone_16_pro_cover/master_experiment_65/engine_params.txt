@@ -1,0 +1,14 @@
+engine_type: openai
+model: gpt-5
+api_key: None
+temperature: 1.0
+max_new_tokens: None
+base_url: None
+endpoint_url: None
+thinking: False
+rate_limit: -1
+top_p: None
+frequency_penalty: None
+presence_penalty: None
+stop: None
+reasoning_effort: minimal

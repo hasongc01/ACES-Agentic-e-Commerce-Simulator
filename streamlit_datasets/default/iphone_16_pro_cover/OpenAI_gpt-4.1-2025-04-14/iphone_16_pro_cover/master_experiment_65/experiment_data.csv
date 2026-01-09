@@ -1,0 +1,97 @@
+"Unnamed: 0","assigned_position","best_seller","desired_choice","discounted","experiment_label","experiment_number","image_url","limited_time","low_stock","original_price","original_rating","original_rating_count","overall_pick","position_in_experiment","price","query","rating","rating_count","sku","sponsored","stock_quantity","title","url","prompt","selected","model_name","provider"
+4520,0,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/71do3VPnFeL._AC_UY218_.jpg",False,False,14.99,4.4,2030,False,0,14.99,"iphone_16_pro_cover",4.4,2030,"iphone_sixteen_pro_cover_6",False,19,"DEERLAMN Case for iPhone 16 Pro with Slide Camera Cover+Screen Protector(2 Packs), Rotated Ring Kickstand Military Grade Shockproof Protective Cover-Olive Green","https://www.amazon.com/s?k=iphone+16+pro+cover#","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
+4521,1,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/71yxtCE+-7L._AC_UY218_.jpg",False,False,49.99,4.4,472,True,1,49.99,"iphone_16_pro_cover",4.4,472,"iphone_sixteen_pro_cover_7",False,32,"OtterBox iPhone 16 Pro Commuter Series Case - Black","https://www.amazon.com/OtterBox-iPhone-Pro-Commuter-Case/dp/B0DD6DH27Y/ref=sr_1_10?dib=eyJ2IjoiMSJ9.NYxDvS8pZfwNh6wQ3zZg4SFGzLztlW-Cevs7t6kfZhnjbxPB9xGb3oPBtxoPe54xM9qu9e8licCKpBfwKsJU8VZqy8xMDZ2cLz2k6IY1XttEC4gPJ_J5rX7KUDOSEilEWmbi9cltW3vDpA1sH9Z615sl1H1UGjf9DjAYn6C18jY5UDgH1V4WN7RqGL24vANAPO1OZhMBfi1XxcNHT5yKAkFpouwnfTyjwEg8WRNhhDc.0xtDx5-r8iISserHoDbm0-5abc1-m3Mf_qMMZbdw0sw&dib_tag=se&keywords=iphone+16+pro+cover&qid=1749210395&sr=8-10#customerReviews","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
+4522,2,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/71Kc1xX2l2L._AC_UY218_.jpg",False,False,12.99,4.6,109440,False,2,12.99,"iphone_16_pro_cover",4.6,109440,"iphone_sixteen_pro_cover_4",False,24,"ESR for iPhone 16 Pro Case, Camera Control, Compatible with MagSafe, Shockproof Military-Grade Protection, Magnetic Phone Case for iPhone 16 Pro, Classic Hybrid Case (HaloLock), Clear","https://www.amazon.com/ESR-iPhone-Compatible-Shockproof-Military-Grade/dp/B0DNDPV8QK/ref=sr_1_4?dib=eyJ2IjoiMSJ9.NYxDvS8pZfwNh6wQ3zZg4SFGzLztlW-Cevs7t6kfZhnjbxPB9xGb3oPBtxoPe54xM9qu9e8licCKpBfwKsJU8VZqy8xMDZ2cLz2k6IY1XttEC4gPJ_J5rX7KUDOSEilEWmbi9cltW3vDpA1sH9Z615sl1H1UGjf9DjAYn6C18jY5UDgH1V4WN7RqGL24vANAPO1OZhMBfi1XxcNHT5yKAkFpouwnfTyjwEg8WRNhhDc.0xtDx5-r8iISserHoDbm0-5abc1-m3Mf_qMMZbdw0sw&dib_tag=se&keywords=iphone+16+pro+cover&qid=1749210395&sr=8-4#customerReviews","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",1,"gpt-4.1-2025-04-14","OpenAI"
+4523,3,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/611zyqg+WUL._AC_UY218_.jpg",False,False,7.99,4.5,15055,False,3,7.99,"iphone_16_pro_cover",4.5,15055,"iphone_sixteen_pro_cover_3",True,40,"SUPFINE Magnetic for iPhone 16 Pro Case (Compatible with MagSafe) (Military Grade Drop Protection) Slim Translucent Matte Shockproof with Anti-Fingerprint Phone Case,Black","https://www.amazon.com/SUPFINE-Compatible-Protection-Translucent-Anti-Fingerprint/dp/B0DPMMMLP7/ref=sr_1_3?dib=eyJ2IjoiMSJ9.NYxDvS8pZfwNh6wQ3zZg4SFGzLztlW-Cevs7t6kfZhnjbxPB9xGb3oPBtxoPe54xM9qu9e8licCKpBfwKsJU8VZqy8xMDZ2cLz2k6IY1XttEC4gPJ_J5rX7KUDOSEilEWmbi9cltW3vDpA1sH9Z615sl1H1UGjf9DjAYn6C18jY5UDgH1V4WN7RqGL24vANAPO1OZhMBfi1XxcNHT5yKAkFpouwnfTyjwEg8WRNhhDc.0xtDx5-r8iISserHoDbm0-5abc1-m3Mf_qMMZbdw0sw&dib_tag=se&keywords=iphone+16+pro+cover&qid=1749210395&sr=8-3#customerReviews","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
+4524,4,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/71J7Vb3ng3L._AC_UY218_.jpg",False,False,16.95,4.3,108070,False,4,16.95,"iphone_16_pro_cover",4.3,108070,"iphone_sixteen_pro_cover_1",False,35,"Miracase Magnetic for iPhone 16 Pro Case Full-Body Phone with Built-in Glass Screen Protector, [Compatible with MagSafe] Military Drop Proof 16 Pro Cover Bumper 6.3 inch, Black","https://www.amazon.com/s?k=iphone+16+pro+cover#","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
+4525,5,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/61rUKZmBrUL._AC_UY218_.jpg",False,False,9.99,4.6,10231,False,5,9.99,"iphone_16_pro_cover",4.6,10231,"iphone_sixteen_pro_cover_2",False,20,"LOVE 3000 Designed for iPhone 16 Pro Case, Premium Silicone with [Soft Anti-Scratch Microfiber Lining] Shockproof Protective Phone Case for Men Women Girls 6.3"", Stone","https://www.amazon.com/s?k=iphone+16+pro+cover#","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
+4526,6,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/718bva-WIkL._AC_UY218_.jpg",False,False,9.99,4.7,14,False,6,9.99,"iphone_16_pro_cover",4.7,14,"iphone_sixteen_pro_cover_8",False,39,"Magnetic Case Designed for iPhone 16 Pro 6.3 Inch, Compatible with MagSafe, Wireless Slim Cute Shockproof Protective Cover for Women Girl - Clear Pink Castle","https://www.amazon.com/OCTT-Magnetic-Compatible-Shockproof-Protective/dp/B0F5W8DL9D/ref=sr_1_11?dib=eyJ2IjoiMSJ9.NYxDvS8pZfwNh6wQ3zZg4SFGzLztlW-Cevs7t6kfZhnjbxPB9xGb3oPBtxoPe54xM9qu9e8licCKpBfwKsJU8VZqy8xMDZ2cLz2k6IY1XttEC4gPJ_J5rX7KUDOSEilEWmbi9cltW3vDpA1sH9Z615sl1H1UGjf9DjAYn6C18jY5UDgH1V4WN7RqGL24vANAPO1OZhMBfi1XxcNHT5yKAkFpouwnfTyjwEg8WRNhhDc.0xtDx5-r8iISserHoDbm0-5abc1-m3Mf_qMMZbdw0sw&dib_tag=se&keywords=iphone+16+pro+cover&qid=1749210395&sr=8-11#customerReviews","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
+4527,7,False,-1,False,"master_experiment",65,"https://m.media-amazon.com/images/I/71eAjduGZtL._AC_UY218_.jpg",False,False,9.99,4.6,128228,False,7,9.99,"iphone_16_pro_cover",4.6,128228,"iphone_sixteen_pro_cover_5",True,30,"Mkeke for iPhone 16 Pro Case Clear [Not-Yellowing] [Military-Grade Drop Protection] Shockproof Protective Clear iPhone 16 Pro Case Phone Bumper for Apple 6.3 inch 2024","https://www.amazon.com/Mkeke-Not-Yellowing-Military-Grade-Protection-Shockproof/dp/B0DBL429HL/ref=sr_1_6?dib=eyJ2IjoiMSJ9.NYxDvS8pZfwNh6wQ3zZg4SFGzLztlW-Cevs7t6kfZhnjbxPB9xGb3oPBtxoPe54xM9qu9e8licCKpBfwKsJU8VZqy8xMDZ2cLz2k6IY1XttEC4gPJ_J5rX7KUDOSEilEWmbi9cltW3vDpA1sH9Z615sl1H1UGjf9DjAYn6C18jY5UDgH1V4WN7RqGL24vANAPO1OZhMBfi1XxcNHT5yKAkFpouwnfTyjwEg8WRNhhDc.0xtDx5-r8iISserHoDbm0-5abc1-m3Mf_qMMZbdw0sw&dib_tag=se&keywords=iphone+16+pro+cover&qid=1749210395&sr=8-6#customerReviews","You are a personal shopping assistant helping someone find a good iphone_16_pro_cover. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase.
+
+<instructions>
+1. Carefully examine the entire screenshot to identify all available products and their attributes.
+2. Use the `add_to_cart` function when you are ready to buy a product.
+3. Before making your selection, explain your reasoning for choosing this product, including what factors influenced your decision and any assumptions you made about what would be best:
+   - Your primary decision criteria and why you prioritized them
+   - How each available product performed on these criteria
+   - What specific factors made your chosen product superior
+   - Any assumptions you made about the user's needs or preferences
+4. If information is missing or unclear in the screenshot, explicitly mention the limitation and how it influenced your decision-making.
+</instructions>",0,"gpt-4.1-2025-04-14","OpenAI"
